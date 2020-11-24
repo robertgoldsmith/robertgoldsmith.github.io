@@ -1,0 +1,156 @@
+/* ---------------- 
+  reset
+---------------- */
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* ---------------- 
+  global styles
+---------------- */
+
+html {font-size: 100%;} /*16px*/
+
+body {
+  background-color: #eee;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #333;
+}
+
+p {
+  margin: 1.15em 0;
+}
+
+h1 {
+  margin-top: 0.5em;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+  font-size: 4.209rem;
+}
+
+small {font-size: 0.75em;}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+blockquote {
+  color: rgba(0,40,85) ;
+  padding: 1em 0 1em 0;
+  margin: 0 auto;
+}
+
+blockquote p {
+  font-size: 1.25em;
+  font-weight: 900;
+}
+
+blockquote footer {
+  text-align: right;
+  padding-right: 1em;
+}
+
+header, figcaption {
+  text-align: center;
+}
+
+/* ---------------- 
+  layout style
+---------------- */
+#space-bg {
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://res.cloudinary.com/bobbymaru/image/upload/v1605952943/tributepage/space-bg_r1xyav.png),linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,40,85,.5) 100%);
+  background-size: 500px;
+  background-position: center;
+  height: 10em;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 30em;
+}
+
+.container.quote-wide  {
+  max-width: 40em;
+}
+
+.container.lander {
+  display: flex;
+  padding: 4em 0 0 0;
+}
+
+#img-div, .container p, header p, hr {
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+#img-div {
+  border: 0.5rem solid white;
+  background: white;
+}
+
+#tribute-link, h1 {
+  color: rgba(0,40,85);
+  font-weight: bold;
+}
+
+
+
+/* ---------------- 
+  svg
+---------------- */
+
+#columbia {
+  width: 4rem;
+  fill: #eee;
+}
+
+#eagle {
+  width: 5em;
+  fill: #aaa;
+}
+
+#surface-top {
+  fill: #eee;
+  height: 20px;
+}
+
+#surface-bottom {
+  width:100%;
+  height: 200px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8' standalone='no'?%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg width='100%25' height='100%25' viewBox='0 0 700 200' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3E%3Cpath d='M0,200l0,-183.683c22.331,0 25.469,20.725 37.862,20.725c16.863,-0 24.247,-29.388 36.027,-29.388c14.429,0 22.246,-7.396 36.673,-7.29c20.822,0.154 33.807,42.562 49.629,42.471c22.804,-0.131 18.954,-21.593 41.758,-21.593c27.644,0 40.26,-12.695 55.726,-12.695c37.402,0 51.559,21.803 73.853,21.625c22.295,0 21.753,-15.209 37.999,-15.209c16.246,-0.129 19.643,22.12 35.89,22.12c35.521,-0 97.111,-37.083 110.388,-37.083c31.163,0 23.905,11.947 38.82,11.712c60.369,-0.95 44.13,23.11 72.56,23.11c33.584,-0 29.687,-18.505 72.815,-18.505l0,183.683l-700,0Z' style='fill:%23aaa;fill-rule:nonzero;'/%3E%3C/svg%3E");
+  background-position: bottom; 
+  background-repeat: repeat-x;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 2em;
+}
+
+#back-link a {
+  text-decoration: none;
+  text-align: center;
+  color: #eee;
+  transition: all 0.5s;
+  padding: 1em 2em;
+}
+
+#back-link a:hover {
+  color: rgba(0,40,85);
+}
+
+@media (min-width: 980px) {
+  
+  #surface-bottom {
+    padding-bottom: 3em;
+  }
+}
+
+
+
+

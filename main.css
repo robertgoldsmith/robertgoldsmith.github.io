@@ -248,8 +248,7 @@ img {
     bottom: 0px;
     padding: 0 3em;
     background: transparent;
-    background:rgba(255, 50, 50, 0.6);
-    /* height: 0px; */
+    /* background:rgba(255, 50, 50, 0.6); */
   }
   
   #main {
@@ -257,7 +256,6 @@ img {
     margin-left: 30%;
     width: calc(100% - 30%);
   }
-  
   
   
   .item-row > .col-6 {

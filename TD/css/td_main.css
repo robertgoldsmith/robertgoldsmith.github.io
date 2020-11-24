@@ -134,7 +134,22 @@ a {
   top: 0;
   bottom: 0;
   height: 60vh;
+  min-height: 500px;
 }
+
+.back-link {
+  margin-top: 1em;
+}
+
+.back-link a {
+  color: #b8b8b8;
+  transition: all 0.4s;
+} 
+
+.back-link a:hover {
+  color: #5a6672;
+}
+
 
 @media (min-width: 740px) {
   #navbar {
