@@ -1,3 +1,3 @@
 # Bobbymaru.github.io
 
-A fisrt attempt at a portfolio page.
+A first attempt at a portfolio page.
