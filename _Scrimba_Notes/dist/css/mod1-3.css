@@ -1,0 +1,171 @@
+:root {
+ 
+  --primary: hsla(54, 88%, 67%, 1);
+
+  --keyword: hsla(54, 88%, 67%, 1);
+
+  --link-text: hsla(54, 88%, 67%, 1);
+
+  --console: hsla(350, 47%, 42%, 1);
+  
+
+  --highlight-1: hsla(191, 47%, 51%, 1);
+  --highlight-2: hsla(27, 100%, 71%, 1);
+  
+  --dark-cornflower-blue:rgba(2, 41, 86, 1);
+
+}
+
+/* ----------------
+   myEmoji 
+----------------- */
+/* @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap'); */
+
+#myEmoji-app {
+  margin: 0.75em 0;
+  padding: 10px;
+  border-radius: 0.5em;
+  background-image: linear-gradient(#5DA4D9, #FFF);
+}
+
+#emoji-container {
+  margin: 40px;
+  text-align: center;
+}
+
+#emoji-container span {
+  margin: 10px;
+  font-size: 60px;
+}
+
+#push-btn, #unshift-btn {
+  background-color: #80D87F;
+  color: #444;
+}
+
+#shift-btn,#pop-btn {
+  background-color: #E23349;
+}
+
+h1 {
+  font-family: 'Baloo 2';
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
+}
+
+input {
+  margin: 0 auto;
+  display: block;
+  border: none;
+  height: 30px;
+  background: white;
+  border-radius: 6px;
+  text-align: center;
+}
+
+button {
+  font-family: 'Baloo 2';
+  font-size: 1em;
+  letter-spacing: px;
+  background: darkcyan;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin: 0 4px;
+}
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 10px;
+}
+
+
+/* ----------------
+  Diary App
+----------------- */
+#diaryApp {
+  margin: 5%;
+  font-family: 'Gill Sans', 'Gill Sans MT';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #eee;
+  // height: 900px;
+  max-width: 20em;
+}
+
+.title {
+  color: #16697A;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.annotation {
+  color: red;
+  font-size: 0.85em;
+  font-family: 'Gill Sans', 'Gill Sans MT';
+}
+
+.annotation.black {
+  color: #000;  
+}
+
+.annotation.white {
+  color: #fff;  
+}
+
+#entryForm {
+  border: 1px solid red;
+}
+
+.entry-textbox {
+  background-color: #FFA62B;
+  width: 24em;
+  height: 10em;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  border: unset;
+  border-radius: 25px;
+}
+
+.entry-textbox:focus {
+  outline: none;
+  box-shadow: 0px 0px 2px #000;
+}
+
+#entryForm .button {
+  border: unset;
+  border-radius: 25px;
+  padding: 5px 16px;
+  margin-left: 76%;
+  background-color: #bbb;
+}
+
+#entries {
+   background: #16697A;
+   color: #EDE7E3;
+   font-family: cursive;
+   padding: 2em;
+   max-width: 20em;
+   border: unset;
+   border-radius: 25px;
+   /* margin-top: 1em; */
+   border: 2px dashed #000;
+}
+
+.entries-nav {
+   padding-bottom: 1em;
+   border: 2px dotted #fff;
+}
+
+.display-entry-button {
+   margin: 0.2em;
+}
+
+.display-entry-button:hover {
+   cursor: pointer;
+}
+

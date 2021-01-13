@@ -1,0 +1,56 @@
+:root {
+  --primary: hsla(1, 85%, 65%, 1);
+
+  --keyword: hsla(1, 85%, 65%, 1);
+
+  --link-text: hsla(48, 100%, 70%, 1);
+
+  --console: hsla(254, 31%, 27%, 1);
+  --html_markup: rgba(4, 37, 36, 1);
+  --css_markup: rgba(7, 59, 58, 1);
+
+ 
+  --highlight-1: hsla(198, 63%, 56%, 1);
+  --highlight-2: hsla(1, 85%, 65%, 1);
+  --highlight-3: hsla(170, 40%, 60%, 1);
+
+}
+
+span {
+  color: var(--white);
+}
+
+.snippet.console,
+code[class*="language-"], 
+pre[class*="language-"] {
+  font-size: 0.85rem;
+}
+
+.keyword-container {
+  justify-content: flex-start;
+}
+
+/* PacMan */
+
+#example-grid {
+  display: grid;
+  max-width: 700px;
+  grid-template: auto / repeat(28, 1fr);
+  outline: solid black;
+} 
+
+#example-grid div {
+  border: solid 1px black;
+  font-size: 0.5em;
+  text-align: center;
+} 
+
+#example-grid div::after {
+  content: '';
+  display: block;
+  padding-bottom: calc(100% - 1.75em);
+}
+
+
+
+

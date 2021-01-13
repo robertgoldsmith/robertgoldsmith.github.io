@@ -1,0 +1,479 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+:root {
+  --almost-black: rgba(25, 19, 8, 1);
+  --dark: rgba(128, 128, 128, 1);
+  --dark: #322a26;
+  --neutral-l: rgba(211, 211, 211, 1);
+  --white: rgba(255, 255, 255, 1);
+  --html_markup: rgba(4, 37, 36, 1);
+  --css_markup: rgba(7, 59, 58, 1);
+}
+
+pre[class*="language-"] {
+  overflow-y: scroll;
+}
+
+/*  https://type-scale.com/ 1.100 - Minor Third ----------- */
+html {
+  scroll-behavior: smooth;
+  font-size: 112.5%;
+  /*18px*/
+}
+
+body {
+  background: var(--almost-black);
+  color: var(--white);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.488rem;
+}
+
+h2 {
+  font-size: 2.074rem;
+}
+
+h3 {
+  font-size: 1.728rem;
+}
+
+h4 {
+  font-size: 1.44rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+small, .text_small {
+  font-size: 0.833rem;
+}
+
+/* ----------------
+ global styles 
+----------------- */
+h1 {
+  margin: 0;
+}
+
+h2 {
+  color: var(--white);
+}
+
+h4 {
+  color: var(--highlight-2);
+}
+
+a {
+  color: var(--link-text);
+}
+
+ul, ol {
+  padding-left: 1.2em;
+}
+
+ul {
+  list-style: none;
+  /* Remove default bullets */
+}
+
+ul li::before {
+  content: "\2022";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--highlight-2);
+  /* Change the color */
+  font-weight: bold;
+  /* If you want it to be bold */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  width: 1em;
+  /* Also needed for space (tweak if needed) */
+  margin-left: -1em;
+  /* Also needed for space (tweak if needed) */
+}
+
+ol li::before {
+  content: "";
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+.tight-list li {
+  margin: 0;
+}
+
+.tight-list li::before {
+  content: "\2023";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--highlight-2);
+  /* Change the color */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  width: 1em;
+  /* Also needed for space (tweak if needed) */
+  margin-left: -1em;
+  /* Also needed for space (tweak if needed) */
+}
+
+strong {
+  color: var(--highlight-2);
+}
+
+hr {
+  border: 1px solid var(--highlight-1);
+  margin: 1.625em 0 1.625em 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+blockquote {
+  border: 2px solid var(--highlight-1);
+  border-radius: 0.5em;
+  padding: 0.5em;
+  margin: 0.5em 0 0.5em 0;
+}
+
+blockquote p {
+  font-size: 1.125rem;
+  line-height: 1.65em;
+}
+
+.mono {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--highlight-3);
+}
+
+.qs {
+  color: white;
+  padding: 0.25rem 0.5rem;
+  white-space: nowrap;
+}
+
+.underline {
+  text-decoration: underline;
+  font-style: oblique;
+}
+
+.emoji {
+  font-size: 3em;
+}
+
+.img-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img-example {
+  max-width: 300px;
+}
+
+.diagram {
+  width: 100%;
+}
+
+.svg {
+  width: 60px;
+}
+
+/* ----------------
+  code snippet styles
+----------------- */
+.snippet, .qs {
+  background-color: var(--almost-black);
+  margin: 0.625em 0 0.625em 0;
+  border-radius: 0.5em;
+  box-shadow: inset 5px 5px 4px rgba(0, 0, 0, 0.6);
+}
+
+.snippet.warning {
+  border: 1px solid var(--highlight-1);
+}
+
+strong.warning {
+  color: var(--highlight-1);
+}
+
+.console {
+  background-color: var(--console);
+  color: var(--neutral-l);
+  padding-left: 1rem;
+  overflow-x: scroll;
+}
+
+.html-markup {
+  background-color: var(--html_markup);
+}
+
+.css-markup {
+  background-color: var(--css_markup);
+}
+
+.keyword-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 1em;
+}
+
+.keyword-container > div {
+  padding: 0.625rem;
+  text-align: center;
+  align-self: center;
+  background-color: var(--keyword);
+}
+
+.keyword, .code-keyword {
+  border-radius: 1em;
+  margin: 0.25rem;
+  color: #000;
+}
+
+.code-keyword {
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+span.error {
+  color: red;
+}
+
+/* ----------------
+ Layout styles 
+----------------- */
+#wrapper {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1400px;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  #wrapper {
+    grid-template-columns: 20% 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  #wrapper {
+    grid-template-columns: 18% 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  #wrapper {
+    grid-template-columns: 15% 1fr;
+  }
+}
+
+header {
+  grid-column: 1 / -1;
+  padding: 1em;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1em;
+  background-color: var(--primary);
+}
+
+header h1, header h2 {
+  color: var(--almost-black);
+  margin: 0;
+}
+
+header h1 {
+  font-weight: 700;
+}
+
+footer {
+  height: 200px;
+}
+
+.modules-nav {
+  margin-top: 1em;
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.modules-nav a {
+  color: var(--almost-black);
+  font-weight: bold;
+}
+
+.modules-nav a:hover,
+.modules-nav a:focus {
+  color: var(--white);
+}
+
+.layer-nav-container {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .layer-nav-container {
+    display: flex;
+    flex-flow: row nowrap;
+    grid-column: 1 / 2;
+    position: sticky;
+    top: 0;
+    height: 80vh;
+    overflow: scroll;
+  }
+}
+
+nav li {
+  margin: 1em 0.75em 1em 0;
+}
+
+nav .last-list-item {
+  margin-bottom: 6em;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--highlight-2);
+}
+
+.nav-hider {
+  box-sizing: border-box;
+  width: 100%;
+  flex: none;
+  margin-left: -100%;
+  opacity: 0.7;
+  grid-column: 1 / 2;
+  position: sticky;
+  top: 0;
+  height: 80vh;
+  z-index: 10;
+  background: linear-gradient(0deg, #191308 0%, rgba(25, 19, 8, 0) 25%);
+  pointer-events: none;
+}
+
+main {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+@media (min-width: 768px) {
+  main {
+    grid-column: 2 / 3;
+  }
+}
+
+section {
+  padding: 1em;
+  border-radius: 0.5em;
+  background-color: var(--dark);
+  max-width: 100%;
+  grid-column: span 6;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--highlight-1);
+  margin-bottom: 1em;
+}
+
+section .flex-row:last-of-type {
+  border: none;
+}
+
+.notes {
+  flex: 1 1 400px;
+  max-width: 900px;
+  min-width: 200px;
+}
+
+.notes.n-medium {
+  flex: 0 1 350px;
+}
+
+.notes.n-small {
+  flex: 0 1 200px;
+}
+
+.notes.n-wide {
+  flex: 1 1 900px;
+}
+
+.flex-two-col {
+  display: flex;
+}
+
+.col-left {
+  flex: 0 1 50%;
+}
+
+.col-right {
+  flex: 0 1 50%;
+}
+
+/* ----------------
+ scroll to top button
+----------------- */
+#scroll-btn {
+  font-size: 2em;
+  color: var(--dark);
+  background-color: var(--primary);
+  position: fixed;
+  z-index: 10;
+  right: 2.5rem;
+  bottom: 1.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  z-index: 10;
+  border: none;
+  outline: none;
+  border-radius: 20%;
+  transition: all .25s ease-in-out;
+}
+
+.btn-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.btn-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+/*# sourceMappingURL=main.css.map */

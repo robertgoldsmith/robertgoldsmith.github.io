@@ -1,0 +1,3005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrimba Notes Font End Dev Path</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900&display=swap" rel="stylesheet">
+  <link href="themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/mod4-5.css">
+</head>
+<body>
+  <div id="wrapper">
+    
+    <header>
+      <h1>Scrimba Notes - Font End Dev Path</h1>
+      <h2>Modules 4-5 <br>CSS & JavaScript fundamentals / Responsive Design
+        </h2>
+      <div class="modules-nav">
+        <a href="index.html" target="_blank">Modules 1-3 <br>
+          <small>HTML & CSS Basics</small><br> 
+          <small>Website Interactivity</small></a>
+          <a href="mod6.html target="_blank">Module 6<br>
+            <small>ES6</small><br>
+            <small>JavaScript Challenges</small></a>
+        
+        <a href="js_bootcamp.html" target="_blank">JavaScript Bootcamp</a>
+      </div>
+    </header>
+    
+    
+    <div class="layer-nav-container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#css_fundamentals" class="nav-link">CSS Fundamentals</a>
+          </li>
+          <li>
+            <a href="#javascript_challenges" class="nav-link">JavaScript Challenges</a>
+            <ul class="tight-list">
+              <li>Modal</li>
+              <li>Search Bar</li>
+              <li>Carousel</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#dice_game" class="nav-link">Dice Game</a>
+          </li>
+          <li>
+            <a href="#snake_game" class="nav-link">Snake Game</a>
+          </li>
+          <li>
+            <a href="#think_responsively" class="nav-link">Starting to Think Responsively</a>
+            <ul class="tight-list">
+              <li>Layout &amp; Typography</li>
+              <li>Media Queries</li>
+              <li>Complete site</li>
+              <li>The essential meta tag</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#responsive_challenges" class="nav-link">Responsive Design Challenges</a>
+            <ul class="tight-list">
+              <li>flex-flow</li>
+              <li>align-items: baseline</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#stepping_up_style" class="nav-link">Stepping Up Our Style</a>
+            <ul class="tight-list">
+              <li>Background Image</li>
+              <li>Combinator selectors</li>
+              <li>Gradients</li>
+              <li>Border Image (for border gradients)</li>
+              <li>Background Blend Modes</li>
+              <li>Transitions</li>
+              <li>The Critical Rendering Path</li>
+            </ul>
+          </li>
+          <li class="last-list-item">
+            <a href="#bbq" class="nav-link">BBQ Site</a>
+          </li>
+          
+        </ul>  
+        
+      </nav>
+      <div class="nav-hider"></div>
+    </div>
+  
+    
+    <!-- ---------
+            &lt;&gt;
+          ----------- -->
+    <!--   end of NAV ------------------------   -->
+    <main>
+      <section id="css_fundamentals" class="box">
+        <h2>CSS Fundamentals</h2>  
+          <div class="notes">
+            <h4>Thing Learned / Refreshed</h4>
+            <ul class="note-list">
+              <li>Margins collapse into each other when they touch. The biggest value fills the space. So, if the first child in an element has <strong>margin-top</strong>, that element can merge with the parent's <strong>margin-top</strong>.</li>
+              <li><strong class="warning">Links</strong> - ALWAYS include <strong>:focus</strong> and <strong>:hover</strong> states</li>
+              <li>
+                Link states. Declaration order matters. Don't overwrite the style you want. 
+                <ol>
+                  <li><strong>visited</strong></li>
+                  <li><strong>focus</strong></li>
+                  <li><strong>hover</strong></li>
+                  <li><strong>active</strong></li>
+                </ol>
+              </li>
+              <li><strong class="warning">Links</strong> - ALWAYS apply styling to the button/link itself. NOT the paragraph or div container. Make sure that the whole element, padding and all are clickable. <br> 
+              <code class="qs">&lt;a class="button" href="#">contact me&lt;/a></code> <br>
+              NOT: <br>
+              <code class="qs">&lt;div class="button">&lt;a href="#">contact me&lt;/a>&lt;/div></code>
+              </li>
+              <li>Button styling - use a <strong>padding</strong> ratio of <br>
+                1:2 or 1:2.5 top &amp; bottom to left &amp; right. <a href="#" class="padding-example">button</a> <br>
+              <code class="qs">padding: 1em 2em;</code></li>
+              <li>Use <strong>inline-block</strong> to account for margin &amp; padding that wont disrupt the flow of other elements or overtake them.<br>
+                <code class="qs">display: inline-block;</code></li>
+              <li>One <strong>&lt;h1></strong> per page</li>
+              
+              <li><strong class="warning">Specificity Power:</strong>
+                <ul>
+                  <li><span class="mono">0,0,1</span> - <strong>element</strong></li>
+                  <li><span class="mono">0,1,0</span> - <strong>class / attribute / pseudo</strong></li>
+                  <li><span class="mono">1,0,0</span> - <strong>id</strong></li>
+                  <li><span class="mono">⚡️,⚡️,⚡️</span> - <strong>inline style</strong> (the emperor)</li>
+                  <li><span class="mono">💥,💥,💥</span> - <code class="qs">!important</code> (the deathstar)</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="javascript_challenges" class="box">
+        <h2>JavaScript Challenges</h2>  
+        
+        <h4>Modal</h4>
+        <div id="modal-container">
+          
+          <div id="overlay">
+              <div id="modal">
+                <h4>Contact Details</h4>
+                <p>Homer Simpson, 742 Evergreen Terrace (no spam please!) 😀</p>
+                <button id="close-modal">Close! 👋</button>
+              </div>
+          </div>
+  
+          <h4>👇 Click to reveal Homer's contact details! 👇</h4>
+          <button id="open-modal">Contact Me 📨</button>
+          
+        </div>
+          
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet  html-markup">
+              <pre>
+                <code class="language-html">
+&lt;div id="modal-container">
+
+  &lt;div id="overlay">
+      &lt;div id="modal">
+        &lt;h4>Contact Details&lt;/h4>
+        &lt;p>Homer Simpson, 742 Evergreen Terrace (no spam please!) 😀&lt;/p>
+        &lt;button id="close-modal">Close! 👋&lt;/button>
+      &lt;/div>
+  &lt;/div>
+
+  &lt;h4>👇 Click to reveal Homer's contact details! 👇&lt;/h4>
+  &lt;button id="open-modal">Contact Me 📨&lt;/button>
+  
+&lt;/div>
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const openModalBtn = document.getElementById("open-modal")
+const closeModalBtn = document.getElementById("close-modal")
+const overlay = document.getElementById("overlay")
+const modal = document.getElementById("modal")
+
+openModalBtn.addEventListener("click", function() {
+  overlay.style.display = "block";
+  // add target to overlay
+  document.addEventListener("click", function(event) {
+    // logs every event target
+    console.log(event.target)
+    if(event.target === overlay){
+      overlay.style.display = "none";
+    }
+  })
+})
+
+closeModalBtn.addEventListener("click", function() {
+  document.getElementById("overlay").style.display = "none";
+})
+                </code>
+              </pre>
+            </div>
+            <p>Hide the overlay and modal in the CSS first. The JS might not load.</p>
+            <p><strong>Note</strong> the console logging every event target onclick.</p>
+          </div>
+        
+          <div class="notes n-medium">
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+/* buttons */
+#open-modal, #close-modal {
+  font-size: 1rem;
+  background: royalblue;
+  color: #fff;
+  outline: none;
+  padding: 0.5em 1em;
+  border: none;
+  border-bottom: 3px solid darkblue;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* push down */
+#open-modal:active, #close-modal:active {
+  position: relative;
+  top: 3px;
+  border: none;
+}
+
+#overlay {
+  /* hide in css first to prevent JS misfire */
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* content */
+#modal {
+  background-color: white;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 300px;
+  position: relative;
+  top: 30%;
+  border-radius: 5px;
+}
+                  
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>Search Bar - Step One</h4>
+        
+        <div class="keyword-container">
+          <div class="code-keyword">.includes()</div>
+          <div class="code-keyword">.toLowerCase()</div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes n-medium">
+            <p>The addEventListener() method attaches an <strong>event</strong> handler to the specified element</p>
+            <p>addEventListener() has a second parameter of 'function', which gives us an '<strong>event</strong>', which inside has lots of properties and methods</p>
+            <p>We can use the property of '<strong>target</strong>' which returns the element that triggered the <strong>event</strong></p>
+            <p>The '<strong>event.target</strong>' has another property called 'value', so '<strong>event.target.value</strong>' which in the case of our input box, gives us the value the user typed in!</p>
+            
+          </div>
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const usernameInput = document.getElementById('usernameInput')
+
+usernameInput.addEventListener('keyup', function(event){
+    let username = event.target.value.toLowerCase()
+    console.log(username)
+})
+                </code>
+              </pre>
+            </div>
+            <p><strong>event</strong> is the function's parameter. On its own, without the target or value, it is simply the <strong>KeyboardEvent</strong>.</p>
+          </div> 
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <h4>Search Bar - Step Two</h4>
+            <p>Don't get confused between <strong>.textContent</strong> and <strong>.value</strong></p>
+            <p>Remember to use <strong>.length</strong> when using a loop</p>
+            <p>The <strong>.includes()</strong> method determines whether one string may be found within another string, returning true or false as appropriate. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes" target="_blank">MDN</a></p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const sentence = 'The quick brown fox jumps over the lazy dog.';
+
+const word = 'fox';
+
+console.log(`The word "${word}" ${sentence.includes(word) ? 'is' : 'is not'} in the sentence`);
+// expected output: "The word "fox" is in the sentence"
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes n-medium">
+            <div class="snippet  html-markup">
+              <pre>
+                <code class="language-html">
+&lt;div id="search_container">
+  &lt;div id="search">
+      &lt;label for="searchInput">Search Users&lt;/label>
+      &lt;input id="searchInput" type="text">
+  &lt;/div>
+  
+  &lt;ul id="results">
+      &lt;li class="name">Karl&lt;/li>
+      &lt;li class="name">Per&lt;/li>
+      &lt;li class="name">Katie&lt;/li>
+      &lt;li class="name">Lupe&lt;/li>
+      &lt;li class="name">Katherine&lt;/li>
+      &lt;li class="name">Kelly&lt;/li>
+      &lt;li class="name">Kurt&lt;/li>
+      &lt;li class="name">Fred&lt;/li>
+  &lt;/ul>
+  
+&lt;/div>
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes n-medium">
+            <h4>Search Bar - Step Three</h4>
+            <div id="search_container">
+              <div id="search">
+                  <label for="searchInput">Search Users</label>
+                  <input id="searchInput" type="text">
+              </div>
+              
+              <ul id="results">
+                  <li class="name">Karl</li>
+                  <li class="name">Per</li>
+                  <li class="name">Katie</li>
+                  <li class="name">Lupe</li>
+                  <li class="name">Katherine</li>
+                  <li class="name">Kelly</li>
+                  <li class="name">Kurt</li>
+                  <li class="name">Fred</li>
+              </ul>
+              
+          </div>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const searchInput = document.getElementById("searchInput")
+
+searchInput.addEventListener("keyup", function(event) {
+  // at each keyup event, the target input's value
+  // is set lower case. The *searchQuery* variable 
+  // changes on every keyup.
+  let searchQuery = event.target.value.toLowerCase();
+  // get HTMLCollection
+  let allNamesDOMCollection = document.getElementsByClassName('name');
+  
+  for (let i = 0; i < allNamesDOMCollection.length; i++) {
+    // set each name to lowercase
+    const currentName = allNamesDOMCollection[i].textContent.toLowerCase();
+    // conditional, does indexed name include any of searchQuery? 
+    if(currentName.includes(searchQuery.toLowerCase())){
+        allNamesDOMCollection[i].style.display = 'block'
+    } else {
+        allNamesDOMCollection[i].style.display = 'none'
+    }
+  }
+});
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        
+        <h4>Carousel - Step One</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <p>Things to think about:</p>
+            <ul>
+              <li>A base HTML structure for the carousel (carousel items, images, buttons)</li>
+              <li>Make it accessible <strong>Aria Labels</strong> on buttons <br>
+                <code class="qs">aria-label="Previous Slide"</code>
+              </li>
+              <li>Style the Carousel</li>
+              <li>Grab all carousel items and attach event listeners to the next/previous buttons</li>
+              <li>Change slide Position</li>
+              <li>Smooth Transition between slides</li>
+            </ul>
+            <p>Styling:</p>
+            <ul>
+              <li>Responsive images <strong>height: auto;</strong><br> 
+                <div class="snippet">
+                  <pre>
+                    <code class="language-js">
+.carousel .carousel-item img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+                    </code>
+                  </pre>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="notes">
+            <div class="keyword-container">
+              <div class="code-keyword">translateY(-50%)</div>
+            </div>
+        
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.carousel .carousel-actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+                </code>
+              </pre>
+            </div>
+            <p>Center align with translateY</p>
+            <p>push the buttons down with <strong>position: absolute;</strong> and <strong>top: 50%</strong>. Then <strong>translateY(-50%)</strong> to position them internally. </p>
+            <p>Push the coordinate down, pull the element up to the coordinate.</p>
+          </div>
+        </div>
+        
+        <h4>Carousel - Step Two</h4>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// HTMLCollection
+const slides = document.getElementsByClassName('carousel-item');
+// index counter
+let slidePosition = 0;
+// total index
+const totalSlides = slides.length;
+
+document.getElementById('carousel-button-next').addEventListener('click', moveToNextSlide);
+document.getElementById('carousel-button-prev').addEventListener('click', moveToPrevSlide);
+
+function moveToNextSlide() {
+    console.log('moving to the next slide!');
+}
+
+function moveToPrevSlide() {
+    console.log('moving to the prev slide!');    
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="notes n-medium">
+            <p>Get all the slides as an array or array-like HTMLCollection</p>
+            <p>Initialize a counter</p>
+            <p>Initialize the total slide count</p>
+            <p>Add listeners to buttons and give them functions.</p>
+          </div>
+        </div>
+        
+        <h4>Carousel - Step Three</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">for...of</div>
+          <div class="code-keyword">classList.add()</div>
+          <div class="code-keyword">classList.remove()</div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const slides = document.getElementsByClassName('carousel-item');
+let slidePosition = 0;
+const totalSlides = slides.length;
+
+document.getElementById('carousel-button-next').addEventListener('click', moveToNextSlide);
+document.getElementById('carousel-button-prev').addEventListener('click', moveToPrevSlide);
+
+function hideAllSlides() {
+    // set all slides to hidden
+    for(let slide of slides){
+        slide.classList.remove("carousel-item-visible")
+        slide.classList.add("carousel-item-hidden")
+    }
+}
+
+function moveToNextSlide() {
+  // call straight away
+  hideAllSlides()
+  
+  // conditional, are we on the last slide?
+  if (slidePosition === totalSlides - 1) {
+    // yes? then reset to the first slide
+    slidePosition = 0;
+  } else {
+    //no? then move to the next slide
+    slidePosition++;
+  }
+  // show the slide we're on
+  slides[slidePosition].classList.add("carousel-item-visible");
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes n-small">
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.carousel .carousel-item,
+.carousel .carousel-item-hidden {
+    display: none;
+}
+                </code>
+              </pre>
+            </div>
+            <p>The carousel items have display none property by default but also have it as a separate 'hidden' class.</p>
+            <p>Use a <strong>for...of</strong> to loop through the slides and hide them all.</p>
+            <p>On each button, firstly, hide all the slides. Then check what slide we're on with a conditional. </p>
+            <p><strong class="warning">Remember</strong> zero indexing. <br> <strong>.length</strong> will give you 1-3. An <strong>array</strong> gives you 0-2. Thats why we have <strong>totalSlides -1</strong>.</p>
+          </div>
+        </div>
+        
+        <h4>Carousel - Step Four</h4>
+        
+        <div class="carousel">
+          <div class="carousel-item carousel-item-visible">
+            <img src="https://res.cloudinary.com/bobbymaru/image/upload/v1610543903/Scrimba%20Images/mod1-3/yuki7_A_gobgqw.png" />
+          </div>
+          <div class="carousel-item">
+            <img src="https://res.cloudinary.com/bobbymaru/image/upload/v1610543903/Scrimba%20Images/mod1-3/yuki7_B_udnap7.png" />
+          </div>
+          <div class="carousel-item">
+            <img src="https://res.cloudinary.com/bobbymaru/image/upload/v1610543903/Scrimba%20Images/mod1-3/yuki7_C_eywfkj.png" />
+          </div>
+          
+          <div class="carousel-actions">
+            <button id="carousel-button-prev" aria-label="Previous Slide">&#12296;</button>
+            <button id="carousel-button-next" aria-label="Next Slide">&#12297;</button>
+          </div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const slides = document.getElementsByClassName('carousel-item');
+let slidePosition = 0;
+const totalSlides = slides.length;
+
+document.getElementById('carousel-button-next').addEventListener('click', moveToNextSlide);
+document.getElementById('carousel-button-prev').addEventListener('click', moveToPrevSlide);
+
+function hideAllSlides() {
+    for (let slide of slides) {
+        slide.classList.remove('carousel-item-visible');
+        slide.classList.add('carousel-item-hidden');
+    }
+}
+
+function moveToNextSlide() {
+  // call straight away
+  hideAllSlides()
+  // conditional, are we on the last slide?
+  if (slidePosition === totalSlides - 1) {
+    // yes? then reset to the first slide
+    slidePosition = 0;
+  } else {
+    //no? then move to the next slide
+    slidePosition++;
+  }
+  // show the slide we're on
+  slides[slidePosition].classList.add("carousel-item-visible");
+}
+
+function moveToPrevSlide() {
+    hideAllSlides();
+    // condition are we on the first slide?
+    if (slidePosition === 0) {
+      // yes? then reset to the last slide
+      slidePosition = totalSlides - 1;
+    } else {
+      // no? then move back to the last slide
+      slidePosition--;
+    }
+    
+  slides[slidePosition].classList.add("carousel-item-visible");
+}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex-row">
+            <div class="notes">
+              <div class="snippet html-markup">
+                <pre>
+                  <code class="language-html">
+&lt;div class="carousel">
+  &lt;div class="carousel-item carousel-item-visible">
+    &lt;img src="images/yuki7_A.png" />
+  &lt;/div>
+  &lt;div class="carousel-item">
+    &lt;img src="images/yuki7_B.png" />
+  &lt;/div>
+  &lt;div class="carousel-item">
+    &lt;img src="images/yuki7_C.png" />
+  &lt;/div>
+  
+  &lt;div class="carousel-actions">
+    &lt;button id="carousel-button-prev" aria-label="Previous Slide">&#12296;&lt;/button>
+    &lt;button id="carousel-button-next" aria-label="Next Slide">&#12297;&lt;/button>
+  &lt;/div>
+&lt;/div>
+                </code>
+              </pre>
+            </div>
+            
+            <p>Key points:</p>
+            <ul>
+              <li>zero indexing and .length</li>
+              <li>aria-labels</li>
+              <li>@keyframes - percentages %</li>
+              <li>animation - name, duration etc.</li>
+              <li>Add dots and text, possibly a slide animation.</li>
+            </ul>
+            
+          </div>
+          
+          <div class="notes">
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.carousel {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel .carousel-item,
+.carousel .carousel-item-hidden {
+  display: none;
+}
+
+.carousel .carousel-item-visible {
+  display: block;
+  animation: fadeVisibility 0.4s;
+}
+
+.carousel .carousel-item img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+.carousel .carousel-actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel .carousel-actions button {
+  border-radius: 50px;
+  background-color: var(--space-cadet);
+  color: #fff;
+  border: 0;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 5px 15px rgba(4, 37, 36, 0.5);
+}
+
+.carousel .carousel-actions button#carousel-button-prev {
+  margin-left: 20px;
+  padding-right: 15px;
+}
+
+.carousel .carousel-actions button#carousel-button-next {
+  margin-right: 20px;   
+  padding-left: 15px;
+}
+
+@keyframes fadeVisibility {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+        </div>
+        
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="dice_game" class="box">
+        <h2>Dice Game</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword">!</div>
+          <div class="code-keyword">Math.random</div>
+        </div>
+          
+        <div class="flex-row">
+          <div class="notes">
+            <h5>Things Learned</h5>
+            <ul>
+              <li>Use <strong>true</strong> and <strong>false</strong> values to determine who's turn it is.</li>
+              <li>Initialize a variable by setting it to true: <br>
+              <code class="qs">let player1Turn = true</code></li>
+              <li>Use <strong>true</strong> and <strong>false</strong> values as a switch with the <strong>!</strong> not operator. <br>
+              Instead of a lengthy if/else statement, set a true value to false like this: <br>
+              <code class="qs">player1Turn = !player1Turn</code></li>
+              <li>A <strong>const</strong> inside a function will reset when the function is called. It will still not be mutable inside the function.</li>
+              <li><strong>Math</strong> </li>
+              </ul>
+                <div class="snippet">
+                  <pre>
+                    <code class="language-js">
+const randomNumber = 
+  Math.floor(Math.random() * 6) + 1
+  //          0-1         0-5    1-6
+                    </code>
+                  </pre>
+                </div>  
+              
+            
+            
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.........
+
+#resetBtn {
+  display: none;
+}
+
+.active {
+  box-shadow: -2px 6px 18px 3px rgba(0,0,0,0.75);
+}
+                </code>
+              </pre>
+            </div>
+            
+            <h5>Things to think about:</h5>
+            <ul>
+              <li><strong>let</strong> variables for scores and true/false values</li>
+              <li><strong>const</strong> variables for grabbed document elements</li>
+              <li>Reverse psychology. On players turn switch, update the opposite player. </li>
+              <li><strong>DRY</strong> code. Create function for the reset.</li>
+              <li>Reset EVERYTHING</li>
+            </ul>
+          </div>
+        
+          <div class="notes">
+            <div class="dice-container">
+              <h1 id="message">Player 1 Turn</h1>
+              <div class="players">
+                  <div id="player1">
+                    <h1>Score: <br>
+                      <span id="player1Scoreboard">0</span>
+                    </h1>
+                    <div id="player1Dice" class="dice active">-</div>
+                  </div>
+                  <div id="player2">
+                    <h1>Score: <br>
+                      <span id="player2Scoreboard">0</span>
+                    </h1>
+                    <div id="player2Dice" class="dice">-</div>
+                  </div>
+              </div>
+  
+              <button id="rollBtn">Roll Dice 🎲</button>
+              <button id="resetBtn">Reset Game 🔁</button>
+            </div>
+            
+            <div class="snippet  html-markup">
+              <pre>
+                <code class="language-html">
+&lt;div class="dice-container">
+  &lt;h1 id="message">Player 1 Turn&lt;/h1>
+  &lt;div class="players">
+      &lt;div id="player1">
+          &lt;h1>Score: 
+              &lt;span id="player1Scoreboard">0&lt;/span>
+          &lt;/h1>
+          &lt;div id="player1Dice" class="dice active">-&lt;/div>
+      &lt;/div>
+      &lt;div id="player2">
+          &lt;h1>Score: 
+              &lt;span id="player2Scoreboard">0&lt;/span>
+          &lt;/h1>
+          &lt;div id="player2Dice" class="dice">-&lt;/div>
+      &lt;/div>
+  &lt;/div>
+
+  &lt;button id="rollBtn">Roll Dice 🎲&lt;/button>
+  &lt;button id="resetBtn">Reset Game 🔁&lt;/button>
+&lt;/div>
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <div class="notes">
+          <div class="snippet">
+            <pre>
+              <code class="language-js">
+// Create variables for the game state
+let player1Score = 0
+let player2Score = 0
+let player1Turn = true
+
+// Create variables to store references to the necessary DOM nodes
+const player1Dice = document.getElementById("player1Dice")
+const player2Dice = document.getElementById("player2Dice")
+const player1Scoreboard = document.getElementById("player1Scoreboard")
+const player2Scoreboard = document.getElementById("player2Scoreboard")
+const message = document.getElementById("message")
+const rollBtn = document.getElementById("rollBtn")
+const resetBtn = document.getElementById("resetBtn")
+
+// Flip button
+function showResetButton() {
+    rollBtn.style.display = "none"
+    resetBtn.style.display = "block"
+}
+
+/* Hook up a click event listener to the Roll Dice Button. */
+rollBtn.addEventListener("click", function() {
+  const randomNumber = Math.floor(Math.random() * 6) + 1
+
+  if (player1Turn) {
+    player1Score += randomNumber
+    player1Scoreboard.textContent = player1Score
+    player1Dice.textContent = randomNumber
+    player1Dice.classList.remove("active")
+    player2Dice.classList.add("active")
+    message.textContent = "Player 2 Turn"
+  } else {
+    player2Score += randomNumber
+    player2Scoreboard.textContent = player2Score
+    player2Dice.textContent = randomNumber
+    player2Dice.classList.remove("active")
+    player1Dice.classList.add("active")
+    message.textContent = "Player 1 Turn"
+  }
+  
+  if (player1Score >= 20) {
+    message.textContent = "Player 1 Won 🥳"
+    showResetButton()
+  } else if (player2Score >= 20) {
+    message.textContent = "Player 2 Won 🎉"
+    showResetButton()
+  }
+  // Flip turn true, false, true, false, true.....etc.
+  player1Turn = !player1Turn
+})
+
+// reset the board 
+resetBtn.addEventListener("click", function(){
+    reset()
+})
+
+function reset() {
+    player1Score = 0
+    player2Score = 0
+    player1Turn = true
+    player1Scoreboard.textContent = 0
+    player2Scoreboard.textContent = 0
+    player1Dice.textContent = "-"
+    player2Dice.textContent = "-"
+    message.textContent = "Player 1 Turn"
+    resetBtn.style.display = "none"
+    rollBtn.style.display = "block"
+    player2Dice.classList.remove("active")
+    player1Dice.classList.add("active")
+}
+              </code>
+            </pre>
+          </div>
+        </div>
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="snake_game" class="box">
+        <h2>Snake Game</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword">.forEach()</div>
+          <div class="code-keyword">setInterval(,)</div>
+          <div class="code-keyword">.clearInterval()</div>
+          <div class="code-keyword">.setTimeout()</div>
+          <div class="code-keyword">keyCode</div>
+          <div class="code-keyword">.classListContains()</div>
+          <div class="code-keyword">Math.floor()</div>
+          <div class="code-keyword">Math.random()</div>
+        </div>
+        
+        <h4>Generate Grid</h4>  
+        <div class="flex-row">
+          
+          <div class="notes">
+            <p>Generate a grid of exactly <strong>0-99</strong> squares with a <strong>for</strong> loop.</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function createGrid() {
+  //create 100 of these elements with a for loop
+  for (let i=0; i < width*width; i++) {
+  //create element
+  const square = document.createElement('div')
+  //add styling to the element
+  square.classList.add('square')
+  //put the element into our grid
+  grid.appendChild(square)
+  //push it into a new squares array    
+  squares.push(square)
+  }
+}
+createGrid()
+                </code>
+              </pre>
+            </div>
+          </div>
+        
+          <div class="notes">
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  height: 200px;
+  border: solid 2px black;
+}
+
+.square {
+  width: 20px;
+  height: 20px;
+}
+                </code>
+              </pre>
+            </div>
+            <p><strong>flex-wrap</strong> keeps it tight</p>
+            <p>Each row is <strong>0-9</strong>, <strong>10-19</strong> and so on.</p>
+          </div>
+        </div>
+        
+        <h4>Create Snake / Movement</h4>
+        <div class="flex-row">
+         
+          <div class="notes">
+            <p>Give the illusion of movement by taking the snake's tail and adding it to the front. </p>
+            <p>Make this easier to handle by reversing the snake's array. That way <code class="qs">currentSnake[0]</code> is always the head.</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+let currentSnake = [2,1,0]
+let direction = 1
+
+// create snake
+currentSnake.forEach(index => squares[index].classList.add('snake'))
+
+function move() {
+  //remove last element from our currentSnake array
+  const tail = currentSnake.pop()
+  //remove styling from last element
+  squares[tail].classList.remove('snake')
+  //add square in direction we are heading
+  currentSnake.unshift(currentSnake[0] + direction)
+  //add styling so we can see it
+  squares[currentSnake[0]].classList.add('snake')
+}
+
+// move one block to the right
+move()
+                </code>
+              </pre>
+            </div>
+          </div>
+        
+          <div class="notes n-medium">
+            <img class="diagram" src="https://res.cloudinary.com/bobbymaru/image/upload/v1610543965/Scrimba%20Images/mod1-3/snake-array_eqyys6.png" alt="snake array diagram">
+            <img class="diagram" src="https://res.cloudinary.com/bobbymaru/image/upload/v1610543965/Scrimba%20Images/mod1-3/createSnake_x349fz.png" alt="snake in first position">
+          </div>
+        </div>
+        
+        <h4>Key Codes / Movement / Direction</h4>
+        <img class="diagram" src="https://res.cloudinary.com/bobbymaru/image/upload/v1610543965/Scrimba%20Images/mod1-3/JS_keycodes_t3sr4n.png" alt="diagram of a keyboard indicating the corresponding JavaScript key codes">
+        <a href="http://keycode.info/" target="_blank">keycode.info</a>
+        
+        <div class="flex-row">
+          
+          
+          <div class="notes">
+            <p>Declare <strong>width</strong> as a variable. Use this to change the grid size globally in future.</p>
+            <p>left and right <strong>+/- 1</strong> Up and down <strong>+/- 10</strong></p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const width = 10                  
+                  
+function control(e) {
+  if (e.keyCode === 39) {
+    console.log('right pressed')
+    direction = 1
+  } else if (e.keyCode === 38) {
+    console.log('up pressed')
+    direction = -width
+  } else if (e.keyCode === 37) {
+    console.log('left pressed')
+    direction = -1
+  } else if (e.keyCode === 40) {
+    console.log('down pressed')
+    direction = +width
+  }
+}
+document.addEventListener('keydown', control)
+                </code>
+              </pre>
+            </div>
+            <p>Use <strong>keydown</strong> so direction changes instantly, not on keyup</p>
+            
+          </div>
+        
+          <div class="notes">
+            <h5>Timing</h5>
+            <p><strong>timerId</strong> is a common variable naming convention. Set an action/function and a duration in milliseconds. That function will keep firing at every interval until stopped by the <strong>clearInterval(timerId)</strong> being called.</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+let timerId = setInterval(move, 1000)
+
+clearInterval(timerId)
+                </code>
+              </pre>
+            </div>
+            <p><strong>clearInterval(timerId)</strong> will be used inside the move function.</p>
+          </div>
+        </div>
+          
+        <h4>Collision Detection</h4>
+        <div class="flex-row">
+          <img src="https://res.cloudinary.com/bobbymaru/image/upload/v1610544011/Scrimba%20Images/mod1-3/collision_hm9qri.png" alt="" class="diagram">
+          
+          <div class="notes">
+            <p>The snake can be on the edge, but can't go past the border.</p>
+            <p><strong>classList.contains('snake')</strong></p>
+            <blockquote>From MDM: <br> The Node.contains() method returns a <strong>Boolean</strong> value indicating whether a node is a descendant of a given node, i.e. the node itself, one of its direct children (childNodes), one of the children's direct children, and so on.</blockquote>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function move() {
+  if (
+    (currentSnake[0] + width >= width*width && direction === width) || 
+    //if snake has hit bottom
+    (currentSnake[0] % width === width-1 && direction === 1) || 
+    //if snake has hit right wall
+    (currentSnake[0] % width === 0 && direction === -1) || 
+    //if snake has hit left wall
+    (currentSnake[0] - width < 0 && direction === -width) || 
+    //if snake has hit top
+    squares[currentSnake[0] + direction].classList.contains('snake')
+    //if snake has hit itself
+  )
+  return clearInterval(timerId) // COLLISION! STOP!
+  
+  //remove last element from our currentSnake array
+  const tail = currentSnake.pop()
+  //remove styling from last element
+  squares[tail].classList.remove('snake')
+  //add square in direction we are heading
+  currentSnake.unshift(currentSnake[0] + direction)
+  //add styling so we can see it
+  squares[currentSnake[0]].classList.add('snake')
+}
+move()
+                </code>
+              </pre>
+            </div>
+          </div>
+        
+          
+        </div>
+        
+        <h4>Generate Apples</h4>
+        <div class="flex-row">
+          <div class="notes">
+
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function generateApples() {
+  do {
+      //generate a random number...
+      appleIndex = Math.floor(Math.random() * squares.length)
+  } while (squares[appleIndex].classList.contains('snake')) 
+  // ...while this is true
+  // if false (not a snake), add an apple.
+  
+  squares[appleIndex].classList.add('apple')
+}
+generateApples()
+                </code>
+              </pre>
+            </div>
+            
+          </div>
+        
+          <div class="notes n-medium">
+            <p><strong>do...</strong> a thing, <strong>while...</strong> this thing is true.</p>
+            <p>So, generate a random number between 0-99, <strong>while</strong> that number/index is a snake square.</p>
+            <p> If it's not a snake square, (likely) create an apple on the random number square.</p>
+            <p>If it a snake square, generate another random number</p>
+          </div>
+        </div>
+        
+        <h4>Snake eats and grows</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+//deal with snake head gets apple
+if (squares[currentSnake[0]].classList.contains('apple')) {
+    //remove the class of apple
+    squares[currentSnake[0]].classList.remove('apple')
+    //grow our snake by adding class of snake to it
+    squares[tail].classList.add('snake')
+    console.log(tail)
+    //grow our snake array
+    currentSnake.push(tail)
+    console.log(currentSnake)
+    //generate new apple
+    generateApple()
+    //add one to the score
+    score++
+    //display our score
+    scoreDisplay.textContent = score
+    //speed up our snake
+    clearInterval(timerId)
+    console.log(intervalTime)
+    intervalTime = intervalTime * speed
+    console.log(intervalTime)
+    timerId = setInterval(move, intervalTime)
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="notes">
+            <p>Keep track of the variables. </p>
+            <p>All this code is part of the move function.</p>
+            <p><code class="qs">currentSnake[0]</code> is always the snake head</p>
+            <p><strong>if</strong> shake head meets apple class. <br> <strong>.contains('apple')</strong> equals <strong>true</strong></p>
+            <p>Remember the <strong>tail</strong>. A new variable created by using <strong>.pop()</strong>.</p>
+            <p><strong>.push()</strong> the tail.</p>
+            <p>Generate new apple</p>
+            <p>Speed up the snake by first stopping the timer. <strong>clearInterval(timerId)</strong></p>
+            <p>Multiply the time by 0.9 (shortens the interval) the variable <strong>speed</strong></p>
+            <p>reset the <strong>timerId</strong> with the new shortened <strong>intervalTime</strong></p>
+          </div>
+        </div>
+        
+        
+        <h4>Start/Reset Button</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function startGame() {
+  //remove the snake
+  currentSnake.forEach(index => squares[index].classList.remove('snake'))
+  //remove the apple
+  squares[appleIndex].classList.remove('apple')
+  //clear timer
+  clearInterval(timerId)
+  // reset the snake
+  currentSnake = [2,1,0]
+  score = 0
+  // add new score to browser
+  scoreDisplay.textContent = score
+  direction = 1
+  intervalTime = 1000
+  generateApple()
+  //read the class of snake to our new currentSnake
+  currentSnake.forEach(index => squares[index].classList.add('snake'))
+  timerId = setInterval(move, intervalTime)
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="notes n-medium">
+            <p>Keep track of the variables</p>
+            <p><strong>forEach(index, function)</strong> <br> For each part of the current snake, remove its class.</p>
+            <p></p>
+          </div>
+        </div>
+          
+        
+        <h4>Full Code</h4>
+        <div class="row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// ---- variables ------------------------------
+const grid = document.querySelector('.grid')
+const startButton = document.getElementById('start')
+const scoreDisplay = document.getElementById('score')
+let squares = []
+let currentSnake = [2,1,0]
+let direction = 1
+const width = 10
+let appleIndex = 0
+let score = 0
+let intervalTime = 1000
+let speed = 0.9
+let timerId = 0
+
+// ---- create grid ------------------------------
+
+function createGrid() {
+  //create 100 of these elements with a for loop
+  for (let i=0; i < width*width; i++) {
+    //create element
+  const square = document.createElement('div')
+  //add styling to the element
+  square.classList.add('square')
+  //put the element into our grid
+  grid.appendChild(square)
+  //push it into a new squares array    
+  squares.push(square)
+  }
+}
+
+createGrid()
+
+// ---- create snake ----------------------------
+
+currentSnake.forEach(index => squares[index].classList.add('snake'))
+
+// ----- reset -----------------------------
+
+function startGame() {
+  //remove the snake
+  currentSnake.forEach(index => squares[index].classList.remove('snake'))
+  //remove the apple
+  squares[appleIndex].classList.remove('apple')
+  clearInterval(timerId)
+  currentSnake = [2,1,0]
+  score = 0
+  // add new score to browser
+  scoreDisplay.textContent = score
+  direction = 1
+  intervalTime = 1000
+  generateApple()
+  //read the class of snake to our new currentSnake
+  currentSnake.forEach(index => squares[index].classList.add('snake'))
+  timerId = setInterval(move, intervalTime)
+}
+
+// ------ move ----------------------------
+
+function move() {
+  // collision
+  if (
+    (currentSnake[0] + width >= width*width && direction === width) || //if snake has hit bottom
+    (currentSnake[0] % width === width-1 && direction === 1) || //if snake has hit right wall
+    (currentSnake[0] % width === 0 && direction === -1) || //if snake has hit left wall
+    (currentSnake[0] - width < 0 && direction === -width) || //if snake has hit top
+    squares[currentSnake[0] + direction].classList.contains('snake')
+  )
+  return clearInterval(timerId) // STOP
+
+  
+  // -- pop tail, add direction --
+  //remove last element from our currentSnake array
+  const tail = currentSnake.pop()
+  //remove styling from last element
+  squares[tail].classList.remove('snake')
+  //add square in direction we are heading
+  currentSnake.unshift(currentSnake[0] + direction)
+  //add styling so we can see it
+  
+  // -- deal with snake head gets apple --
+  if (squares[currentSnake[0]].classList.contains('apple')) {
+    //remove the class of apple
+    squares[currentSnake[0]].classList.remove('apple')
+    //grow our snake by adding class of snake to it
+    squares[tail].classList.add('snake')
+    console.log(tail)
+    //grow our snake array
+    currentSnake.push(tail)
+    console.log(currentSnake)
+    //generate new apple
+    generateApple()
+    //add one to the score
+    score++
+    //display our score
+    scoreDisplay.textContent = score
+    //speed up our snake
+    clearInterval(timerId)
+    console.log(intervalTime)
+    intervalTime = intervalTime * speed
+    console.log(intervalTime)
+    timerId = setInterval(move, intervalTime)
+  }
+
+  squares[currentSnake[0]].classList.add('snake')
+}
+
+// ----------------------------------
+
+function generateApple() {
+  do {
+      appleIndex = Math.floor(Math.random() * squares.length)
+  } while (squares[appleIndex].classList.contains('snake'))
+      squares[appleIndex].classList.add('apple')
+} 
+generateApple()
+
+
+// ----------------------------------
+
+// 39 is right arrow
+// 38 is for the up arrow
+// 37 is for the left arrow
+// 40 is for the down arrow
+
+function control(e) {
+  if (e.keyCode === 39) {
+      console.log('right pressed')
+      direction = 1
+  } else if (e.keyCode === 38) {
+      console.log('up pressed')
+      direction = -width
+  } else if (e.keyCode === 37) {
+      console.log('left pressed')
+      direction = -1
+  } else if (e.keyCode === 40) {
+      console.log('down pressed')
+      direction = +width
+  }
+}
+
+// ----------------------------------
+
+document.addEventListener('keydown', control)
+startButton.addEventListener('click', startGame)
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="notes n-medium">
+            <div id="snake-container">
+              <h1>Snake Game</h1>
+              <button id="start">Start/Restart</button>
+              <h2>Score <span id="score"></span></h2>
+              <div class="grid"></div>
+              <script src="index.pack.js"></script>
+            </div>
+          </div>
+        </div>
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="think_responsively" class="box">
+        <h2>Starting to think Responsively</h2>  
+        
+        <h4>Things Learned / Refreshed</h4>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <p><strong>ems</strong> are always relative to their parent. Can cause cascading size issues with fonts. Good for padding.</p>
+            <p>Use <strong>rems</strong> (root em) to font sizes</p>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+h1 {
+  font-size: 24px;
+  margin-bottom: 1em; /* 24 px */
+  margin-bottom: 2em; /* 48px */
+}
+                </code>
+              </pre>
+            </div>
+              
+            <p>Pixels follow the 'reference pixel' They will be the same on every screen regardless of resolution. Retina displays etc.</p>
+            <p><strong>95%</strong> max-width. Don't hit the edges on smaller screens.</p>
+              <div class="snippet css-markup">
+                <pre>
+                  <code class="language-css">
+.container {
+  widows: 95%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+                </code>
+              </pre>
+            </div>
+              
+            <p>Put a <strong>max-width</strong> of 100% on images, not just width, so they don't grow beyond their size.</p>
+            <p>Have an <strong class="warning">img</strong> selector up yop next to the body styles. use <strong class="warning">display: block;</strong> to avoid glippy bottom spacing associated with inline elements. </p>
+            <div class="snippet css-markup warning">
+              <pre>
+                <code class="language-css">
+img {
+  max-width: 100%;
+  display: block;
+}
+                </code>
+              </pre>
+            </div>
+            
+            <p>Also create a one-line container <strong>flex</strong> style to apply on all flex parent elements.</p>
+            <div class="snippet css-markup warning">
+              <pre>
+                <code class="language-css">
+.container-flex {
+  display: flex;
+}
+                </code>
+              </pre>
+            </div>
+            <p>justification and alignment can be applied ad hoc.</p>
+          </div>
+          
+          
+          
+            
+          
+          <div class="notes">
+            <p>Note on compound selectors</p>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+/* this is fine */               
+nav ul {
+
+}
+
+/*  DON'T DO THIS */
+nav ul li {
+    
+}
+
+/* DON'T DO THIS */
+nav ul li a {
+    
+}
+                </code>
+              </pre>
+            </div>
+            <p>Think about how easy it is to read. Don't add unnecessary specificity.</p>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">             
+nav ul {
+
+}
+
+nav li {
+    
+}
+
+nav a {
+    
+}
+                </code>
+              </pre>
+            </div>
+            
+            <p><strong class="warning">Remove bullet points &amp; default list padding:</strong></p>
+            <div class="snippet css-markup warning">
+              <pre>
+                <code class="language-css">             
+ul {
+  list-style: none;
+  padding: 0;
+}
+                </code>
+              </pre>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        <h4>Media Queries</h4>   
+        <div class="flex-row">
+          <div class="notes">
+            <p>You need a type and/or a condition.</p>
+            <p>In this below example, the background of the body will only be red when using a device that has a screen, and which has a width of 600px or bigger.</p>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+/* @media [media type] ([media condition]) { ... } */
+
+@media screen and (min-width: 600px) {
+  body {
+      background: red;
+  }
+}
+                </code>
+              </pre>
+            </div>
+            <p>Types</p>
+            <ul>
+              <li>all</li>
+              <li>screen</li>
+              <li>print</li>
+              <li>speech</li>
+            </ul>
+            
+            <div class="snippet css-markup warning">
+              <pre>
+                <code class="language-css">
+header {
+  background: #f8f8f8;
+  padding: 2em 0;
+}
+
+@media (max-width: 675px) {
+  .container-flex {
+      flex-direction: column;
+  }
+  
+  header {
+      text-align: center;
+  }
+}
+                </code>
+              </pre>
+            </div>
+            <p>Its fine to include media queries after each element that needs them.</p>
+            
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+/* MAX WIDTH - everything up to and including this width */
+@media (max-width: 675px) {
+}
+
+/* MIN-WIDTH - everything beyond this width */
+@media (min-width: 675px) {
+}
+
+/* BOTH - everything between */
+@media (min-width: 400px) and (max-width: 600px) {
+}
+                </code>
+              </pre>
+            </div>
+            <p>MAX & MIN</p>
+            
+          </div>
+        
+          <div class="notes">
+            <p><strong class="warning">Order is important!</strong></p>
+            <p>put bigger size last so they sizes are not overwritten by a smaller size after.</p>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+/* from a minimum width of 400px and bigger */
+@media (min-width: 400px) {
+    body {
+        background: purple;
+    }
+}
+
+/* from a minimum width of 650px and bigger */
+@media (min-width: 650px) {
+    body {
+        background: orange;
+    }
+}
+                </code>
+              </pre>
+            </div>
+            
+            <p>Combine conditions with <strong>and</strong></p>
+            <p>If orientation becomes portrait, the background will revert to pink.</p>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+body {
+  background: pink;
+}                  
+                  
+@media (min-width: 500px) and (orientation: landscape) {
+  body {
+      background: orange;
+  }
+}
+                </code>
+              </pre>
+            </div>
+            
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries" target="_blank">MDN</a>
+          </div>
+        </div>
+        
+        <h4>Complete Site</h4>
+        <div class="notes">
+          <a href="Simple%20Life%20Site/index.html" target="_blank">Living the social life</a>
+          <p>Crop images with <strong>object-fit: cover;</strong> and <strong>object-position: left /right / %</strong></p>
+          <p>Breakpoints must always be <strong class="warning">layout</strong> specific. Not device specific.</p>
+          <p><strong>Margins</strong></p>
+          <p>Use margins to space out type. Always go bigger than you think. Try to only apply then to the bottom of things. NOTE. The margins of flex items will not collapse.</p>
+          <p><strong>Layout</strong></p>
+          <p>Arrange html structurally, h2, img, p etc. Use flex <strong>order</strong>to rearrange.</p>
+          <p>Order of Layout:</p>
+          <ul>
+            <li>Global body &amp; img (100% block)</li>
+            <li>Typography</li>
+            <li>Layout - container, header, footer, layout, main, aside </li>
+            <li>Navigation</li>
+            <li>Articles</li>
+            <li>Widgets.</li>
+          </ul>
+        </div>
+        
+        
+        <div class="flex-row">
+          
+          <div class="notes">
+            <div class="snippet  html-markup">
+              <pre>
+                <code class="language-html">
+&lt;html>
+  &lt;head>
+    &lt;link href="https://fonts.googleapis.com/css?family=Lora|Ubuntu:300,400,700&display=swap" rel="stylesheet">
+    &lt;link rel="stylesheet" href="css/styles.css">
+  &lt;/head>
+  &lt;body> 
+    &lt;header>
+      &lt;div class="container container-flex">
+        &lt;div class="site-title">
+          &lt;h1>Living the social life&lt;/h1>
+          &lt;p class="subtitle">A blog exploring minimalism in life&lt;/p>
+        &lt;/div>
+        &lt;nav>
+          &lt;ul>
+            &lt;li>&lt;a href="index.html">Home&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="about-me.html">About me&lt;/a>&lt;/li>
+            &lt;li>&lt;a class="current-page" href="recent-posts.html">Recent posts&lt;/a>&lt;/li>
+          &lt;/ul>
+        &lt;/nav>
+      &lt;/div> &lt;<!-- / .container -->
+    &lt;/header>
+    
+    &lt;div class="container container-flex">
+      &lt;main role="main">
+            
+        &lt;article class="article-recent">
+          &lt;div class="article-recent-main">
+            &lt;h2 class="article-title">Finding simplicity in life&lt;/h2>
+            &lt;p class="article-body">&lt;strong>Life can get complicated really quickly&lt;/strong>, but it doesn't have to be! There are many ways to simplify your life, &lt;a href="#">a few of which we've explored in the past&lt;/a>. This week we're taking a bit of a approach though, in how you can find simplicity in the life you already living.&lt;/p>
+            &lt;a href="#" class="article-read-more">CONTINUE READING&lt;/a>
+          &lt;/div>
+          &lt;div class="article-recent-secondary">
+            &lt;img src="img/life.jpg" alt="simple white desk on a white wall with a plant on the far right side" class="article-image">
+            &lt;p class="article-info">July 23, 2019 | 3 comments&lt;/p>
+          &lt;/div>
+        &lt;/article>
+            
+        &lt;article class="article-recent">
+          &lt;div class="article-recent-main">
+            &lt;h2 class="article-title">How to keep your cooking simple &lt;/h2>
+            &lt;p class="article-body">Food is a very important part of everyone's life. If you want to be healthy, you have to eat healthy. One of the easiest ways to do that is to keep your cooking nice and simple.&lt;/p>
+            &lt;a href="#" class="article-read-more">CONTINUE READING&lt;/a>
+          &lt;/div>
+          &lt;div class="article-recent-secondary">
+            &lt;img src="img/food.jpg" alt="two dumplings on a wood plate with chopsticks" class="article-image">
+            &lt;p class="article-info">July 19, 2019 | 3 comments&lt;/p>
+          &lt;/div>
+        &lt;/article>
+        
+        &lt;article class="article-recent">
+          &lt;div class="article-recent-main">
+            &lt;h2 class="article-title">Simplicity and work &lt;/h2>
+            &lt;p class="article-body">Work is often a major source of stress. People get frustrated, it ruins their relationship with others and it leads to burnout. By keeping your work life as simple as possible, it will help balance everything out.&lt;/p>
+            &lt;a href="#" class="article-read-more">CONTINUE READING&lt;/a>
+          &lt;/div>
+          &lt;div class="article-recent-secondary">
+            &lt;img src="img/work.jpg" alt="a chair white chair at a white desk on a white wall" class="article-image">
+            &lt;p class="article-info">July 12, 2019 | 3 comments&lt;/p>
+          &lt;/div>
+        &lt;/article>
+        
+        &lt;article class="article-recent">
+          &lt;div class="article-recent-main">
+            &lt;h2 class="article-title">Simple decorations&lt;/h2>
+            &lt;p class="article-body">A home isn't a home until you've decorated a little. People either don't decorate, or they go overboard and it doesn't have the impact they were hoping for. Staying simple will help draw the eye where you want it to and make things pop like never before.&lt;/p>
+            &lt;a href="#" class="article-read-more">CONTINUE READING&lt;/a>
+          &lt;/div>
+          &lt;div class="article-recent-secondary">
+            &lt;img src="img/deco.jpg" alt="a green plant in a clear, round vase with water in it" class="article-image">
+            &lt;p class="article-info">July 3, 2019 | 3 comments&lt;/p>
+          &lt;/div>
+        &lt;/article>
+      &lt;/main>
+        
+      &lt;aside class="sidebar">
+          
+        &lt;div class="sidebar-widget">
+          &lt;h2 class="widget-title">ABOUT ME&lt;/h2>
+          &lt;img src="img/about-me.jpg" alt="john doe" class="widget-image">
+          &lt;p class="widget-body">I find life better, and I'm happier, when things are nice and simple.&lt;/p>
+        &lt;/div>
+          
+        &lt;div class="sidebar-widget">
+          &lt;h2 class="widget-title">RECENT POSTS&lt;/h2>
+          &lt;div class="widget-recent-post">
+            &lt;h3 class="widget-recent-post-title">Keeping cooking simple&lt;/h3>
+            &lt;img src="img/food.jpg" alt="two dumplings on a wood plate with chopsticks" class="widget-image">
+          &lt;/div>
+          &lt;div class="widget-recent-post">
+            &lt;h3 class="widget-recent-post-title">Simplicity and work&lt;/h3>
+            &lt;img src="img/work.jpg" alt="a chair white chair at a white desk on a white wall" class="widget-image">
+          &lt;/div>
+          &lt;div class="widget-recent-post">
+            &lt;h3 class="widget-recent-post-title">Simple decorations&lt;/h3>
+            &lt;img src="img/deco.jpg" alt="a green plant in a clear, round vase with water in it" class="widget-image">
+          &lt;/div>
+        &lt;/div>
+          
+      &lt;/aside>
+        
+    &lt;/div>
+    
+    
+    &lt;footer>
+      &lt;p>&lt;strong>Living the Simple Life&lt;/strong>&lt;/p>
+      &lt;p>Copyright 2019&lt;/p>
+    &lt;/footer>
+
+      
+      
+  &lt;/body>
+&lt;/html>
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+/* articles */
+
+.article-featured {
+  border-bottom: #707070 1px solid;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+}
+
+.article-recent {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+.article-recent-main {
+  order: 2;
+}
+
+.article-recent-secondary {
+  order: 1;
+}
+
+@media (min-width: 675px) {
+  .article-recent {
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  
+  .article-recent-main {
+      width: 68%;
+  }
+  
+  .article-recent-secondary {
+      width: 30%;
+  }
+  
+  .article-featured {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .article-image {
+      order: -2;
+      min-height: 250px;
+      object-fit: cover;
+      /* object-position: left; */
+  }
+  
+  .article-info {
+      order: -1;
+  }
+}
+
+/* widgets */
+
+.sidebar-widget {
+  border: 20px solid #efefef;
+  margin-bottom: 2em;
+  padding: 1em;
+}
+
+.widget-recent-post {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #707070;
+  margin-bottom: 1em;
+}
+
+.widget-recent-post:last-child {
+  border: 0;
+  margin: 0;
+}
+
+.widget-image {
+  order: -1;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.image-full {
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 2em;
+}
+
+/* =================
+Typography
+================= */
+
+h1, 
+h2,
+h3 {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  color: #143774;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+h3 {
+  color: #1792d2;
+}
+
+a {
+  color: #1792d2;
+}
+
+a:hover,
+a:focus {
+  color: #143774;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* h1 subtitle */
+.subtitle {
+  font-weight: 700;
+  color: #1792d2;
+  font-size: .75rem;
+  margin: 0;
+}
+
+.article-title {
+  font-size: 1.5rem;
+}
+
+.article-read-more,
+.article-info {
+  font-size: .875rem;
+}
+
+.article-read-more {
+  color: #1792d2;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.article-read-more:hover,
+.article-read-more:focus {
+  color: #143774;
+  text-decoration: underline;
+}
+
+.article-info {
+  margin: 2em 0;
+}
+
+.widget-title,
+.widget-recent-post-title {
+  font-size: 1rem;
+}
+
+.widget-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+}
+
+.widget-recent-post-title {
+  color: #143774;
+}
+
+
+/* =================
+Layout
+================= */
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  background: #f8f8f8;
+  padding: 2em 0;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+footer {
+  background:#143774;
+  color: white;
+  text-align: center;
+  padding: 3em 0;
+}
+
+@media (min-width: 675px) {
+  header {
+      text-align: left;
+  }
+  
+  .container-flex {
+      flex-direction: row;
+  }
+  
+  main {
+      width: 70%;
+  }
+  
+  aside {
+      width: 25%;
+      min-width: 200px;
+      margin-left: 1em;
+  }
+}
+
+/* navigation */
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin-left: 2em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #707070;
+  font-weight: 700;
+  padding: .25em 0;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #1792d2;
+}
+
+.current-page {
+  border-bottom: 1px solid #707070;
+}
+
+.current-page:hover {
+  color: #707070;
+}
+
+@media (max-width: 675px) {
+  nav ul {
+      flex-direction: column;
+  }
+  
+  nav li {
+      margin: .5em 0;
+  }
+}
+                </code>
+              </pre>
+            </div>
+            <a href="Simple%20Life%20Site/index.html" target="_blank">Living the social life</a>
+          </div>
+          
+        </div>
+        
+        
+        <h4>THE ESSENTIAL META TAG</h4>
+        <h5>meta name="" content=""</h5>
+        <p>The meta tag has many uses, but the most important is the </p>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet html-markup warning">
+              <pre>
+                <code class="language-html">
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1">
+  &lt;meta name="author" content="Kevin Powell">
+&lt;/head>
+                </code>
+              </pre>
+            </div>
+            <p><strong class="warning">Always</strong> use the <strong>meta</strong> tag!</p>
+            <p>This sets the viewport equal to the device's viewport. <strong>THIS IS A MUST FOR MOBILES AND TABLETS</strong></p>
+          </div>
+        </div>
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="responsive_challenges" class="box">
+        <h2>Responsive Design Challenges</h2>  
+        
+        <div class="flex-row">
+          <div class="notes">
+            <div class="keyword-container">
+              <div class="code-keyword">flex-flow</div>
+            </div>
+            <p><strong>flex-flow</strong> is a shorthand property for direction and/or wrapping.</p>
+            
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+/* flex-flow: <'flex-direction'> */
+flex-flow: row;
+flex-flow: row-reverse;
+flex-flow: column;
+flex-flow: column-reverse;
+
+/* flex-flow: <'flex-wrap'> */
+flex-flow: nowrap;
+flex-flow: wrap;
+flex-flow: wrap-reverse;
+
+/* flex-flow: <'flex-direction'> and <'flex-wrap'> */
+flex-flow: row nowrap;
+flex-flow: column wrap;
+flex-flow: column-reverse wrap-reverse;
+
+/* Global values */
+flex-flow: inherit;
+flex-flow: initial;
+flex-flow: unset;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <div class="keyword-container">
+              <div class="code-keyword">align-items: baseline;</div>
+            </div>
+            
+            <p><strong>align-items: baseline;</strong> will place the first line, of two or more flex columns on the same baseline of text.</p>
+            
+            <div id="flex-baseline-container">
+              <h1 class="title">The Navbar</h1>
+              <div class="fbc-links">
+                <a class="fbc-link current-page" href="#">Home</a>
+                <a class="fbc-link" href="#">About Us</a>
+              </div>
+            </div>
+          </div>
+        </div>  
+        
+        
+          
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+body {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url(https://tellusdmsmedia.newmindmedia.com/wsimgs/The-Club_2_933698845.jpg[ProductImage]);
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 0.5em;
+  max-width: 80%;
+}
+
+.text {
+  font-size: 1.5rem;
+  max-width: 80%;
+  margin: 1em;
+}
+
+.btn {
+  color: white;
+  text-decoration: none;
+  background: #22499c;
+  font-weight: 800;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 10px;
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  margin: 1em;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        
+          <div class="notes">
+            <img src="https://res.cloudinary.com/bobbymaru/image/upload/v1610544081/Scrimba%20Images/mod1-3/call-to-action_biaiqr.png" alt="" class="diagram">
+            <p><strong>align-items</strong> uses the height as its basis. To center full screen use <strong>height: 100vh</strong></p>
+            <p>Use <strong>box-sizing: border-box</strong> to include padding and border space. Avoid bottom gap.</p>
+          </div>
+          
+        </div>
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="stepping_up_style" class="box">
+        <h2>Stepping Up Our Style</h2>  
+        <div class="flex-row">
+          <div class="notes">
+            <p><strong>line-height:</strong> aka 'leading'. Keep it about <strong>1.6</strong> on the body text. Use a <strong>unit-less</strong>number, not ems or px. It will be responsive to the typography its assigned to. <strong>line-height</strong> is measured as half the font size above and half below. For big text or 'all caps' consider a smaller <strong>line-height</strong>.</p>
+            <p>Use <strong>text-transform:</strong> to capitalize, uppercase or lowercase blocks of type. Keep the html as it is.</p>
+            <p><strong>letter-spacing:</strong> aka 'tracking'. Good for all caps and small text. Use px as a unit. A little goes a long way.</p>
+            <p class="spacing-example">letter-spacing at 5px, transformed to uppercase</p>
+          </div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <h4>background-image:</h4> 
+            <p>Use <strong>url(../images/picture.png</strong> TWO DOTS, TWO STEPS BACK. The default position is to tile.</p>
+            
+            <div class="bg-image bg-image-one">default top left</div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.bg-image-one {
+  background-image: url("https://source.unsplash.com/daily?dark_red");
+  background-color: #000;
+}
+                </code>
+              </pre>
+            </div>
+            <p>have a fallback background-color in case the image doesn't load.</p>
+            <div class="bg-image bg-image-two">background-position: center;</div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.bg-image-two {
+  background-image: url("https://source.unsplash.com/daily?dark_red");
+  background-color: #000;
+  background-position: center;
+  /* background-position: top left / bottom right; */
+}
+                </code>
+              </pre>
+            </div>
+            <div class="bg-image bg-image-three"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.bg-image-three {
+  background-image: url("https://source.unsplash.com/daily?dark_red");
+  background-color: #000;
+  background-size: cover;
+}
+                </code>
+              </pre>
+            </div>
+            <p><strong>cover</strong>: Scales the image as large as possible to fill the container, stretching the image if necessary. If the proportions of the image differ from the element, it is cropped either vertically or horizontally so that no empty space remains.</p>
+            <div class="bg-image bg-image-three"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.bg-image-four {
+  background-image: url("https://source.unsplash.com/daily?dark_red");
+  background-color: #000;
+  background-size: contain;
+}
+                </code>
+              </pre>
+            </div>
+            <p><strong>contain</strong>: Scales the image as large as possible within its container without cropping or stretching the image. If the container is larger than the image, this will result in image tiling, unless the background-repeat property is set to no-repeat.</p>
+          </div>
+        </div>
+        
+        <div class="flex-row">
+          
+          <div class="notes">
+            <h4>Combinator selectors: ~ + ></h4>
+            <p>Adjacent sibling combinator <code class="qs">h2 + p</code></p>
+            <div class="snippet html-markup">
+              <pre>
+                <code class="language-html">
+   &lt;h2>Become a BBQ master! &lt;/h2>
+👉 &lt;p>Register Today&lt;/p>
+   &lt;p>Lorem ipsum&lt;/p>
+   &lt;p class="fine-print">Lorem ipsum&lt;/p>
+                </code>
+              </pre>
+            </div>
+            
+            <p>Sibling combinator <code class="qs">h2 ~ p</code></p>
+            <div class="snippet html-markup">
+              <pre>
+                <code class="language-html">
+   &lt;h2>Become a BBQ master! &lt;/h2>
+👉 &lt;p>Register Today&lt;/p> 
+👉 &lt;p>Lorem ipsum&lt;/p>
+   &lt;div>
+     &lt;p>Lorem ipsum&lt;/p>
+   &lt;/div>
+👉 &lt;p class="fine-print">Lorem ipsum&lt;/p>
+                </code>
+              </pre>
+            </div>
+            
+            <p>Direct Child combinator <code class="qs">#outer > p</code></p>
+            <div class="snippet html-markup">
+              <pre>
+                <code class="language-html">
+  &lt;div id="outer">
+👉   &lt;p>Sharon&lt;/p>
+👉   &lt;p>Tracy&lt;/p>
+     &lt;div id="inner">
+       &lt;p>Margaret&lt;/p>
+     &lt;/div>
+👉   &lt;p>Megan&lt;/p>
+  &lt;/div>
+                </code>
+              </pre>
+            </div>
+            
+            <p>All Direct Children <code class="qs">* ></code></p>
+            <p>Centering on very large screens. Give all direct children a max width and left right margins of auto.</p>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.intro > *,
+.main-content > * {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+                </code>
+              </pre>
+            </div>
+            <img src="https://res.cloudinary.com/bobbymaru/image/upload/v1610544106/Scrimba%20Images/mod1-3/direct-child-centering_cs0xjb.png" alt="" class="diagram">            
+            
+          </div>
+          
+        
+          <div class="notes">
+            <h4>Gradients</h4>
+            <div class="g-box g-box-1"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.g-box-1 { 
+  background-image: 
+    linear-gradient(to bottom right, red, blue); 
+}
+                </code>
+              </pre>
+            </div>
+            
+            <div class="g-box g-box-2"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.g-box-2 { 
+  background-image: 
+    linear-gradient(0deg, green, yellow)
+}
+                </code>
+              </pre>
+            </div>
+            
+            <div class="g-box g-box-3"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.g-box-3 { 
+  background-image: 
+    linear-gradient(90deg, orange 75%, teal) 
+}
+                </code>
+              </pre>
+            </div>
+            
+            <div class="g-box g-box-4"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.g-box-4 { 
+  background-image: 
+    linear-gradient(90deg, orange,
+                            orange 10%,
+                            teal 10%,
+                            teal 20%,
+                            orange 20%,
+                            orange 30%,
+                            teal 30%,
+                            teal 40%,
+                            orange 40%) 
+}
+                </code>
+              </pre>
+            </div>
+            
+            <div class="g-box g-box-5"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.g-box-5 { 
+  background-image: radial-gradient(red, blue);
+  width: 100px;
+  height: 100px; 
+}
+                </code>
+              </pre>
+            </div>
+            <a href="https://css-tricks.com/stripes-css/" target="_blank">CSS tricks - Stripes</a>
+          </div>
+        </div>
+        
+        <h4>border image (for border gradients)</h4>
+        <div class="flex-row">
+          <div class="notes">
+            
+            <div class="border-gradient"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.border-gradient {
+  width: 180px;
+  height: 150px;
+  border: 20px solid;
+  border-image: linear-gradient(45deg, #5eb1bf, #ef7b45) 1;
+  /* with a slice value */
+}
+                </code>
+              </pre>
+            </div>
+            <p>Border gradients, use <strong>border-image</strong>. Include a slice value. However, <strong>border-radius</strong> is impossible this way.</p>
+            
+          </div>
+          
+          <div class="notes">
+            <div class="border-gradient2"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.border-gradient2 {
+width: 180px;
+height: 150px;
+border: 20px solid;
+border-image: linear-gradient(45deg, #5eb1bf, #ef7b45);
+/* with NO slice value (just the four corners)*/
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <div class="border-gradient3"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.border-gradient3 {
+  width: 300px;
+  height: 80px;
+  border: double 1em transparent;
+  border-radius: 30px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(45deg, #5eb1bf, #ef7b45);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+                </code>
+              </pre>
+            </div>
+            <p>To have gradients on the border and rounded corners, use <strong>background-clip: content-box, border-box;</strong> and forgo border-image for <strong>background-image</strong>.</p>
+          </div>
+          
+        </div>
+        
+        <h4>Background Blend Modes</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <p>no blend mode</p>
+            <div class="bg-image bg-image-blend1"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.bg-image-blend1 {
+  background-image: url("https://source.unsplash.com/daily?dark_shark");
+  background-color: #5eb1bf;
+  background-size: cover;
+  background-position: center;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="notes">
+            <p>multiply</p>
+            <div class="bg-image bg-image-blend2"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.bg-image-blend2 {
+  background-image: url("https://source.unsplash.com/daily?dark_shark");
+  background-color: #5eb1bf;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="notes">
+            <p>screen</p>
+            <div class="bg-image bg-image-blend3"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.bg-image-blend3 {
+  background-image: url("https://source.unsplash.com/daily?dark_shark");
+  background-color: #5eb1bf;
+  background-blend-mode: screen;
+  background-size: cover;
+  background-position: center;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="notes">
+            <p>overlay</p>
+            <div class="bg-image bg-image-blend4"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.bg-image-blend4 {
+  background-image: url("https://source.unsplash.com/daily?dark_shark");
+  background-color: #5eb1bf;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="notes">
+            <p>gradient on screen</p>
+            <div class="bg-image bg-image-blend5"></div>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.bg-image-blend5 {
+  background-image: url("https://source.unsplash.com/daily?dark_shark"), linear-gradient(45deg,red, blue);
+    /* background-color: #ff0000; */
+    background-blend-mode: screen;
+    background-size: cover;
+    background-position: center;
+}
+                </code>
+              </pre>
+            </div>
+            <p><strong>Multiply</strong> - Anything lighter than the background color we use will not show through.</p>  
+            <p><strong>Screen</strong> - Anything darker than the background color we use will not show through.</p>  
+            <p><strong>Overlay</strong> - Anything lighter than the background color  will go lighter and the darks will go darker. Loosly Colorizes an image.</p>  
+          </div>
+          
+          <div class="notes">
+            <img src="https://res.cloudinary.com/bobbymaru/image/upload/v1610544135/Scrimba%20Images/mod1-3/blend-modes_mmdoux.png" alt="" class="diagram">
+          </div>
+        </div>
+        
+        <h4>Transitions</h4>
+        <div class="flex-row">
+          <div class="notes">
+            
+            <button class="btn btn-primary">Hover Over Me</button>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.btn {
+  width: 180px;
+  height: 60px;
+  border: 0;
+  border-radius: 0.5em;
+}                     
+                      
+.btn-primary {
+  background-color: #404040;
+  color: white;
+  transition: background-color 250ms; 👈
+}
+
+.btn-primary:hover {
+  background-color: #F18119;
+}
+                </code>
+              </pre>
+            </div>
+            <p>Put the transition on the element, not its transitioned to state. Keep the duration to 250ms - 500ms. Any more is considered indulgent.</p>
+            <ul>
+              <li><strong>property</strong></li>
+              <li><strong>duration</strong> ms or s</li>
+              <li><strong>timing-function</strong>: ease, ease-in etc</li>
+              <li><strong>delay</strong></li>
+            </ul>
+          </div>
+          
+          <div class="notes">
+            <button class="btn btn-scale">Hover Over Me</button>
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+.btn-scale {
+  background-image: linear-gradient(to left, #FF713B, #FFA51D);
+  color: white;
+  transform: scale(1);
+  transition: transform 250ms;
+}
+
+.btn-scale:hover,
+.btn-scale:active {
+  transform: scale(1.1);
+}
+                </code>
+              </pre>
+            </div>
+            <p>Set a initial <strong>scale</strong> value of 1.</p>
+            <p><strong class="warning">IMPORTANT</strong> When moving elements with transitions, Don't use top, left, etc positions or -100% margin. Do use <strong>translate</strong> instead.</p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="notes">
+            <h4>Understanding Transitions - the Critical Rendering Path.</h4>
+            <br>
+            <h5>
+              <strong class="spacing">Styles</strong> > 
+              <strong class="spacing">Layout</strong> > 
+              <strong class="spacing">Paint</strong> > 
+              <strong class="spacing">Composite</strong>
+            </h5>
+            <p><strong>Styles</strong>: The browser starts calculating the styles to apply in elements — Recalculate Style.</p>
+            <p><strong>Layout</strong>: In the following layer, the browser will start generating the shape and position for each of those elements — Layout. This is where the browser sets the page properties such as width and height, as well as its margins, or left/top/right/bottom for instance.</p>
+            <p><strong>Paint</strong>: The browser will now start filling in the pixels for each element into layers. The properties that it uses are, for instance: box-shadow, border-radius, color, background-color, among others.</p>
+            <p><strong>Composite</strong>: This is where you want to do your magic, as this is when the browser starts drawing all the layers in the screen. Modern browsers can animate four styles pretty, pretty well, making use of the transform and opacity properties.</p>
+            <ul>
+              <li>Position — transform: translateX(n) translateY(n) translateZ(n);</li>
+              <li>Scale — transform: scale(n);</li>
+              <li>Rotation — transform: rotate(ndeg);</li>
+              <li>Opacity — opacity: n;</li>
+            </ul>
+            <p>The transform properties affect a Composite. Here we’re telling the browser that layers will be painted and ready to go as soon as the animation starts, so there are fewer hiccups when rendering the animation.</p>
+            <a href="https://medium.com/outsystems-experts/how-to-achieve-60-fps-animations-with-css3-db7b98610108" target="_blank">More info on the critical rendering path.</a>
+          </div>
+        </div>
+        
+       
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="bbq" class="box">
+        <h2>BBQ</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword">FormData</div>
+          <div class="code-keyword">.get()</div>
+          <div class="code-keyword">new</div>
+        </div>
+        <a href="_BBQ%20Site/index.html" target="_blank">BBQ Site</a>
+        <div class="flex-row">
+          
+          <div class="notes">
+            <div class="snippet html-markup">
+              <pre>
+                <code class="language-html">
+&lt;div class="intro">
+  &lt;h1>Learn how to make &lt;strong>the best BBQ ribs&lt;/strong> in town&lt;/h1>
+  &lt;p>Join us for this live webinar&lt;/p>
+  &lt;p class="top-text">Mouthwateringly delicious&lt;/p>
+&lt;/div>
+
+&lt;div id="Main-Content" class="main-content">
+  &lt;h2>Become a BBQ master! &lt;/h2>
+  &lt;p>Register Today&lt;/p>
+  &lt;p>BBQ isn't just standing in front of your grill with it on full 
+    blast and hoping for the best. It's an art! One way to speed up
+     the process is to learn from the best. You can do just that by
+      signing up for this free webinar!&lt;/p>
+  
+  &lt;form id="Email-Collector" class="email-collector" action="#" method="POST">
+      &lt;input name="firstName" type="text" required placeholder="first name">
+      &lt;input name="emailAddress" type="email" required  placeholder="email">
+      &lt;button class="btn btn-primary" type="submit">Register&lt;/button>
+  &lt;/form>
+  
+  &lt;p class="fine-print">We'll never share your information
+     without your permission&lt;/p>
+&lt;/div>
+                </code>
+              </pre>
+            </div>
+          </div>
+        
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+let emailCollectorForm = document.getElementById("Email-Collector")
+let mainContent = document.getElementById('Main-Content')
+
+emailCollectorForm.addEventListener("submit", event => {
+    // Stop the default event behavior
+    event.preventDefault()
+    
+    // use FormData to get the User's name and email 
+    // Create a new instance of FormData 
+    let ourFormData = new FormData(event.target)
+    
+    // Get name and email from the FormData
+    let userFirstName = ourFormData.get('firstName')    
+    let userEmailAddress = ourFormData.get('emailAddress')  
+    
+    // Create new content  
+    let updatedHtmlContent = `
+        &lt;h2>Congratulations, ${userFirstName}!&lt;/h2>
+    
+        &lt;p>You're on your way to becoming a BBQ Master!&lt;/p>
+        
+        &lt;p class="fine-print">You will get weekly BBQ tips sent to: ${userEmailAddress}&lt;/p>
+    `
+    //update the content
+    mainContent.innerHTML = updatedHtmlContent
+})
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+/*  font-family: 'Source Sans Pro', sans-serif;  */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif; 
+  font-size: 1rem;
+  color: #404040;
+  text-align: center;
+}
+
+
+/* =================
+  Typography 
+  ================= */
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #fff;
+  margin: 0;
+}
+
+h1 + p {
+  color: #F18119;
+  font-weight: 900;
+  font-size: 1.3125rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.3125rem;
+  margin: 0;
+}
+
+h2 + p {
+  font-weight: 900;
+  color: #F18119;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.top-text {
+  font-size: 0.625rem;
+  margin: 0;
+  padding-top: 2px;
+  color: #F18119;
+  font-weight: 900;
+  text-transform: uppercase;
+  order: -1;
+  border-top: 5px solid #F18119;
+  border-image: linear-gradient(to left, #ff713b, #ffa51d) 1;
+}
+
+.fine-print {
+  font-size: 0.625rem;
+  letter-spacing: 1px;
+}
+
+strong { font-weight: 900; }
+
+
+/* =================
+  Intro section 
+  ================= */
+  
+.intro {
+  background-image: url(../images/ribs.jpg);
+  background-color: #404040;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  padding: 0 .5em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 50vh;
+}
+
+
+/* =================
+  main-content section 
+  ================= */
+  
+.main-content {
+  padding: 2em 1em;
+}
+
+
+
+.intro > *,
+.main-content > * {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =================
+  form
+  ================= */
+  
+.email-collector {
+  width: 80%;
+  max-width: 300px;
+}
+
+input,
+.btn {
+  width: 100%;
+  border-radius: 5px;
+}
+
+input {
+  font-family: inherit;
+  text-align: inherit;
+  margin-bottom: .75em;
+  padding: .25em;
+  border: 1px solid #404040;
+  transform: scale(1);
+  transition: transform 250ms;
+}
+
+input:focus {
+  transform: scale(1.1);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1em 1.5em;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to left, #FF713B, #FFA51D);
+  color: white;
+  transform: scale(1);
+  transition: transform 250ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: scale(1.1);
+}
+
+/* =================
+  media queries 
+  ================= */
+  
+@media (min-width: 500px) {
+  body {
+      font-size: 1.125rem;
+      display: flex;
+  }
+  
+  h1 {
+      font-size: 3.5rem;
+  }
+  
+  h2,
+  h1 + p {
+      font-size: 1.75rem;
+  }
+  
+  .intro,
+  .main-content {
+      width: 50%;
+      min-height: 100vh;
+  }
+  
+  .main-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="" class="box">
+        
+          
+        <div class="flex-row">
+          <div class="notes">
+            
+          </div>
+        
+          <div class="notes">
+            
+          </div>
+        </div>
+          
+      </section>
+      <footer></footer>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <button id="scroll-btn" class="btn-hidden" title="Go to top">⌃</button>
+    </main>
+  </div>
+  
+  
+  
+  
+  <!--  JS  -->
+  <script src="./JS/prism.js"></script>
+  <script src="./JS/app4.js"></script>
+  <script src="./JS/scrollbtn.js"></script>
+</body>
+</html>

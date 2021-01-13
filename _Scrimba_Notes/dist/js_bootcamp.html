@@ -1,0 +1,3242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrimba Notes Font End Dev Path</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="themes/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/jsbootcamp.css">
+</head>
+<body>
+  <div id="wrapper">
+    
+    <header>
+      <h1>Javascript BootCamp Notes</h1>
+      <div class="modules-nav">
+        <a href="index.html" target="_blank">Modules 1-3</a>
+        <a href="mod4-5.html" target="_blank">Modules 4-5</a>
+        <a href="mod6.html" target="_blank">Module 6</a>
+        <a href="#" target="_blank">Modules ?</a>
+      </div>
+    </header>
+    
+    <div class="layer-nav-container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#variables_strings" class="nav-link">Variables & Strings</a>
+          </li>
+          <li>
+            <a href="#types_conditionals" class="nav-link">Types & Conditionals</a>
+            <ul class="tight-list">
+              <li>If Else</li>
+              <li>Switch</li>
+              <li>Ternary</li>
+              <li>Short-circuiting</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#functions" class="nav-link">Functions</a>
+            <ul class="tight-list">
+              <li>Closure</li>
+              <li>Default Parameters</li>
+              <li>Callbacks</li>
+              <li>Arrow Functions</li>
+              <li>Naming Conventions</li>
+              <li>⭐️ Arrow Functions and .this</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#objects_maps" class="nav-link">Objects & Maps</a>
+            <ul class="tight-list">
+              <li>Basic Object</li>
+              <li>Getting and Modifying Object Data</li>
+              <li>Destructuring Objects</li>
+              <li>Merge Objects</li>
+              <li>Maps vs Objects</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#arrays_sets" class="nav-link">Arrays & Sets</a>
+            <ul class="tight-list">
+              <li>Check Element Existence</li>
+              <li>Perform Actions on All Elements</li>
+              <li>Subsets of Arrays</li>
+              <li>⭐️ Reduce</li>
+              <li>Spread Operator</li>
+              <li>Destructuring Arrays</li>
+              <li>Turn Objects into Arrays</li>
+              <li>Sets</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#classes" class="nav-link">Classes</a>
+            <ul class="tight-list">
+              <li>Constructors & Prototypes</li>
+              <li>Prototypical Inheritance and Classes</li>
+              <li>Share Class features with Extend</li>
+              <li>Getters & Setters</li>
+              <li>.bind()</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#async" class="nav-link">Async JavaScript</a>
+            <ul class="tight-list">
+              <li>Callback Hell</li>
+              <li>Promises</li>
+              <li>API's & fetch requests</li>
+              <li>Async - Await</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#keep_clone" class="nav-link">Google Keep Clone</a>
+            
+          </li>
+          <li>
+            <a href="#essential" class="nav-link">Essential Concepts</a>
+          </li>
+          <li class="last-list-item">
+            <a href="#hacker" class="nav-link">Hacker News Clone</a>
+          </li>
+          
+        </ul>  
+      </nav>
+      <div class="nav-hider"></div>
+    </div>
+  
+    
+    <!-- ---------
+            &lt;&gt;
+          ----------- -->
+    <!--   end of NAV ------------------------   -->
+    <main>
+      <section id="variables_strings" class="box">
+        <h2>Variables & Strings</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword">globalThis</div>
+          <div class="code-keyword">"use strict"</div>
+        </div>
+          
+        <div class="flex-row">
+          <div class="notes">
+            <p>The global <strong>globalThis</strong> property contains the global this value, which is akin to the global object.</p>
+            <p><strong>console</strong> is a property of <strong>window</strong> which is the global object of the browser. <strong>global</strong> is the global object of a server. In newer systems all can be accessed by using <strong>globalThis</strong>.</p>
+            
+          <p>Applying <strong>"strict mode"</strong> to the top of your statements will force cleaner code. Variables Must Be Declared in Strict Mode. Functions must be declared at the top level of a scope. </p>
+          </div>
+        </div>
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="types_conditionals" class="box">
+        <h2>Types & Conditionals</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword">? :</div>
+          <div class="code-keyword">if else</div>
+          <div class="code-keyword">switch</div>
+          <div class="code-keyword">case</div>
+          <div class="code-keyword">break</div>
+          <div class="code-keyword">default</div>
+        </div>
+          
+        <div class="flex-row">
+          <div class="notes">
+            <h4>if else</h4>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const time = "night" // could be "afternoon", "evening" and "night"
+
+if (time === "morning") {
+  console.log("Good morning!");
+} else if (time === "afternoon") {
+  console.log("Good afternoon!");
+} else if (time === "evening") {
+  console.log("Good evening!");
+} else {
+  console.log("Good night!");
+}
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›Good night!
+                </code>
+              </pre>
+            </div>
+          </div>
+        
+          <div class="notes">
+            <h4>Switch</h4>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const time = "night" // could be "afternoon", "evening" and "night"
+
+switch (time) {
+  case "morning":
+      console.log("Good morning!");
+  break; 
+  case "afternoon":
+      console.log("Good afternoon!");
+  break; 
+  case "evening":
+      console.log("Good evening!");
+  break;
+  case "night":
+      console.log("Good night!");
+  break;
+  default:
+      console.log("please specify a valid time of day");
+}
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›Good night!       
+                </code>
+              </pre>
+            </div>
+          </div>
+        
+          <div class="notes">
+            <h4>Ternary</h4>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// is the iPad authenticated?
+const isAuthenticated = true;
+let shoppingCart;
+
+shoppingCart = isAuthenticated ? "iPad" : ""
+
+console.log("shoppingCart: ", shoppingCart);
+
+
+// Is the user old enough
+const age = 20;
+let allowedAccess;
+
+allowedAccess = age >= 18 ? true : false
+
+console.log("allowedAccess: ", allowedAccess);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›shoppingCart: ,"iPad"
+›allowedAccess: ,true
+                </code>
+              </pre>
+            </div>
+            <p>Ternary conditionals can be chained, but shouldn't be. It makes for confusing and hard to read code.</p>
+          </div>
+          
+          <div class="notes">
+            <h4>Short Circuit</h4>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const response = "Reed";
+
+// const username = response ? response : "guest";
+const username = response || "guest";
+
+console.log(username);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+Reed
+                </code>
+              </pre>
+            </div>
+            <p>Using the o operator <strong>||</strong> JavaScript will always opt for the true value when given the choice. response is true, so 'Reed'. If response was an empty string, it would evaluate to false and 'guest' would be the username.</p>
+          </div>
+        
+          <div class="notes">
+            <p>Challenge</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+/* Challenge 1: Let's say you're building Reddit. 
+Only users that are either moderators or have reached
+ a certain karma threshold are allowed to upvote. */
+
+const karma = 143;
+const isModerator = true;
+
+// first use a ternary to set hasEnoughKarma
+// to true if karma is above 100. If not, set it to false
+let hasEnoughKarma = karma > 100 ? true : false;
+
+console.log(hasEnoughKarma)
+
+//  set the value of canUpvote with short-circuiting 
+// (using hasEnoughKarma and isModerator)
+let canUpvote = hasEnoughKarma || isModerator;
+
+console.log("canUpvote:", canUpvote);
+
+
+/* Challenge 2: Let's say that only moderators who have
+ enough karma are allowed to delete posts.  
+ How would you set the canDelete variable */
+
+// set canDelete to true if both hasEnoughKarma 
+// and isModerator is true
+let canDelete = hasEnoughKarma && isModerator;
+
+console.log("canDelete:", canDelete);
+
+
+// Challenge 3: what is the value of user? What if 
+// you switch the hasValidEmail variable to false? 
+// What if the response is empty?
+
+const response = "JohnDoe";
+const hasValidEmail = true;
+    // parentheses evaluate first, then &&, then ||
+const user = hasValidEmail && (response || "guest");
+console.log("user: ", user);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›true
+›canUpvote:,true
+›canDelete:,true
+›user: ,"JohnDoe"
+                </code>
+              </pre>
+            </div>
+            
+          </div>
+          
+          
+          
+        </div>
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="functions" class="box">
+        <h2>Functions</h2>  
+        <h4>Closure</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+let likeCount = 0;
+
+function handleLikePost() {
+    likeCount += 1; 
+    console.log(likeCount)
+}
+
+handleLikePost();
+handleLikePost();
+handleLikePost();
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+1 
+2
+3
+                </code>
+              </pre>
+            </div>
+            <p>If we declare and initialize the <strong class="func-ref">likeCount</strong> inside the <strong class="func-ref">handleLikePost</strong> function, it will reset every time we call it. If we leave it in the global scope (as above) it is vulnerable to accidental change.</p>
+            <p>We need to create a <strong>closure</strong>.</p>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function handleLikePost(step) {
+  let likeCount = 0;
+  return function addLike() {
+    likeCount += step;    
+    return likeCount;
+  }
+}
+
+const doubleLike = handleLikePost(2);
+
+console.log(doubleLike());
+console.log(doubleLike());
+console.log(doubleLike());
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+2
+4
+6
+                </code>
+              </pre>
+            </div>
+            <p>A function that is the return value inside another function, that refers to a locally declared variable, is said to close over it.</p>
+            <p><strong class="func-ref">addLike</strong> has access to <strong class="func-ref">likeCount</strong>.</p>
+            <p><strong>Essentially, closures allow us to remember values.</strong></p>
+          </div>
+          
+          
+          
+          <div class="notes">
+            <div class="snippet warning">
+              <pre>
+                <code class="language-js">
+// Closures follow the following pattern
+function closure() {
+  // some internal implementation that we 
+  // want to stay in scope of closure
+  return function enclosedFunction() {
+      // implementation
+  };
+}
+                </code>
+              </pre>
+            </div>
+            <p>Closures are a property of JavaScript functions</p>
+          </div>
+        
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// Countdown Closure
+function countdown(startVal, step) {
+  // initialize to 25
+  let num = startVal + step
+  return function decrement() {
+    num -= step
+    return num
+  }
+}
+
+const countingDown = countdown(20, 5);
+
+console.log(countingDown());
+console.log(countingDown());
+console.log(countingDown());
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›20
+›15
+›10
+                </code>
+              </pre>
+            </div>
+          </div>
+            
+        </div>
+        
+        <h4>Default Parameters</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">Number</div>
+          <div class="code-keyword">toFixed()</div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function convertTemperature(celsius, decimalPlaces = 1) {
+
+  const fahrenheit = celsius * 1.8 + 32;
+  return Number(fahrenheit.toFixed(decimalPlaces));
+}
+
+// zero decimal places
+console.log(convertTemperature(21, 0));
+// NO PARAM default one decimal place
+console.log(convertTemperature(21));
+// three decimal places
+console.log(convertTemperature(27.33, 3));
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›70
+›69.8
+›81.194
+                </code>
+              </pre>
+            </div>
+            <p><strong>Number</strong> converts a string to a number. <strong>toFixed</strong> returns a string to n digits after the decimal place. </p>
+          </div>
+        </div>
+        
+        <h4>Callbacks (higher order functions)</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const username = 'john'                  
+                  
+// function that capitalizes single strings
+const capitalize = name => `${name.charAt(0).toUpperCase()}${name.slice(1)}`;  
+  
+// function that takes a name and calls back  
+// the capitalize function on it (higher order function)
+const greetUser = (name, callback) => callback(capitalize(name));  
+
+console.log(greetUser('david', capitalize)) // David
+
+// function stored to a variable
+// that in turn references (calls back) the 
+// greetUser function, uses the username and returns it with a string
+const result = greetUser(username, name => `Hi there, ${name}!`)
+
+console.log(result);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+David
+Hi there, John
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>Arrow Function Closure Refactor</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const countdown = (startVal, step) => {
+  let num = startVal + step;
+  return () =>  num -= step; 
+}
+
+const countingDown = countdown(20, 5);
+
+console.log(countingDown());
+console.log(countingDown());
+console.log(countingDown());
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›20
+›15
+›10
+                </code>
+              </pre>
+            </div>
+          </div>  
+        </div>
+        
+        <h4>Naming Conventions</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// create a todo
+function createTodo() {}
+// update a todo
+function updateTodo() {}
+// check off todo
+function checkCompleteTodo() {}
+// delete todo
+function deleteTodo() {}
+
+// getting a todo
+function getTodo() {}
+
+// getting user
+function fetchUser() {}
+                </code>
+              </pre>
+            </div>
+            <p>Think verb followed by a noun. Keep it consistent. removeThis, removeThat, not removeThis, deleteThat. Legibility is key.</p>
+          </div>
+        </div>
+        
+        <h4>⭐️ Arrow Functions & .this</h4>
+        <div class="flex-row">
+          <div class="notes n-wide">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const userData = { 
+  username: "Reed",
+  title: "JavaScript Programmer",
+  // this works
+  getBio() {
+    console.log(`User ${this.username} is a ${this.title}`);
+  },
+  // this is a problem
+  askToFriend() {
+    setTimeout(function() {
+      console.log(`Would you like to friend ${this.username}?`);   
+    }, 2000);  
+  }  
+}
+
+userData.getBio();
+userData.askToFriend();
+                </code>
+              </pre>
+            </div>
+            <div class="snippet console">
+              <pre>
+                <code>
+›User Reed is a JavaScript Programmer
+›Would you like to friend undefined?
+                </code>
+              </pre>
+            </div>
+            <p>In the higher order function <strong class="func-ref">askToFriend()</strong>, <strong>this</strong> looses its binding.</p>
+            <p>One solution would be to add <strong>this</strong> to a variable in the <strong class="func-ref">askToFriend()</strong> function. eg. <code class="qs">let that = this</code> and then, use the <strong class="func-ref">that</strong> variable in the <strong>setTimeout</strong> function. eg. <code class="qs">${that.username}</code>. we can do this because:</p>
+            <blockquote><strong>Any function can access any variable in parent scope.</strong></blockquote>
+            <p>However, we can take advantage of arrow functions use of the <strong>lexical this</strong>. </p>
+            <blockquote>"Arrow functions do NOT define their own this, so they go to the enclosing scope and look for it just as they would with any variable you try to use in their scope."</blockquote>
+            
+            <div class="snippet n-wide">
+              <pre>
+                <code class="language-js">
+const userData = { 
+  username: "Reed",
+  title: "JavaScript Programmer",
+  getBio() {
+    console.log(`User ${this.username} is a ${this.title}`);
+  },
+  askToFriend() {
+    setTimeout(() => {
+      console.log(`Would you like to friend ${this.username}?`);   
+    }, 2000);  
+  } 
+}
+
+userData.getBio();
+userData.askToFriend();
+                </code>
+              </pre>
+            </div>
+            <p>As a consequence, turning <strong>getBio</strong> into an arrow function would loose its binding as well and it would print <em>undefined</em>.</p>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›User Reed is a JavaScript Programmer
+›Would you like to friend undefined?
+                </code>
+              </pre>
+            </div>
+            <a href="https://spin.atomicobject.com/2014/10/20/javascript-scope-closures/">Scope and closures.</a>
+          </div>
+          
+          <div class="notes">
+            <h5>Simple lexical scope example</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+var obj1 = {
+  printThis: function() {
+      console.log(this);
+  }
+};
+
+
+obj1.printThis(); // prints object
+
+var func1 = obj1.printThis;
+
+func1();  // prints the whole f'ing window object
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="objects_maps" class="box">
+        <h2>Objects & Maps</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword">{ }</div>
+        </div>
+          
+        <h4>First Object</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const bar = 'Moe\'s'
+const cafe = "Rubarb"
+const restaurant = "Saxon Mill"
+
+const favouritePlaces = {
+  bar, // object property shorthand
+  cafe,
+  restaurant,
+  
+  greeting(place){ 
+    console.log(`Welcome to ${place}`)
+    }
+}
+
+// invoke greeting
+favouritePlaces.greeting(favouritePlaces.bar)
+
+// log original object
+console.log(favouritePlaces)
+
+// update properties
+const secondGreeting = (place) => console.log(`S'up dudes! welcome to ${place}!`)
+favouritePlaces.greeting = secondGreeting
+favouritePlaces.bar = "The 502"
+
+// log updated object
+console.log(favouritePlaces)
+
+// invoke new greeting
+favouritePlaces.greeting(favouritePlaces.bar)
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›Welcome to Moe's
+›{bar: "Moe's", cafe: "Rubarb", restaurant: "Saxon Mill", greeting: ƒ()}
+›{bar: "The 502", cafe: "Rubarb", restaurant: "Saxon Mill", greeting: ƒ()}
+›S'up dudes! welcome to The 502!
+                </code>
+              </pre>
+            </div>
+            <p>If the property key is the same as the value, use the <strong>object property shorthand</strong></p>
+            <p>function properties do not need let of const, or the arrow syntax</p>
+            <p>Changing properties in the global scope will mutate the object.</p>
+          </div>
+        
+        </div>
+        
+        <h4>Getting and Modifying Object Data</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <h5>The 6 Primitives</h5>
+            <p><strong>number, string, boolean, undefined, null, symbol</strong></p>
+            <p>Primitives are passed by value. They are equal to copies of each other.</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const str = 'hello world';
+const anotherStr = 'hello world';
+console.log(str === anotherStr); // true
+
+const num = 42;
+const anotherNum = 42;
+console.log(num === anotherNum); // true
+                </code>
+              </pre>
+            </div>
+            <p>This is not the way with objects. Objects are passed by reference. Each object is unique.</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const obj = {};
+const anotherObj = {};
+console.log(obj === anotherObj); // false
+                </code>
+              </pre>
+            </div>
+            
+            <p>Variables and function arguments cannot be assigned via dot notation.</p>
+            <div class="snippet warning">
+              <pre>
+                <code class="language-js">
+//---- this doesn't work -----------
+function getColor(key) {
+  return colors.key;
+}
+
+console.log(getColor('blue'));
+//----------------------------------
+                </code>
+              </pre>
+            </div>
+            
+          </div>
+        
+          <div class="notes">
+            
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const color = 'black';
+const hexCode = '#000';
+
+const colors = {
+  'yellow Color': '#ff0',
+  blue: "#00f",
+  orange: "#f60",
+  [color]: hexCode
+};
+
+console.log(colors);
+
+// Use brackets when passing variables
+// or arguments
+function getColor(key) {
+  return colors[key];
+}
+
+console.log(getColor('blue'));
+                </code>
+              </pre>
+            </div>
+            <p>Dynamically alter objects with bracket notation.</p>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+{
+  yellow Color: "#ff0", blue: "#00f",
+  orange: #f60, black: #000
+}
+
+#00f
+                </code>
+              </pre>
+            </div>
+            
+          <p>Along with being able to access multi-word strings, bracket notation is able to interpret arguments from functions. Dot notation cannot do this.</p>
+            
+          </div>
+        </div>
+        
+        <h4>Destructuring Objects</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">const { property } = object</div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const user = {
+  name: "Reed",
+  username: "Reedbarger",
+  email: "reed@gmail.com",
+  details: {
+    title: "Programmer"  
+  }  
+};
+
+// 👉 destructuring properties
+const { name, email } = user;
+
+// 👉 destructuring nested properties
+const { title } = user.details
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// 👉 destructuring properties and nested properties
+const { name, details:{ title }} = user;
+
+function displayUserBio() {
+  console.log(`${name} is a ...${title}`); 
+}
+
+displayUserBio()
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›Reed is a ...Programmer
+                </code>
+              </pre>
+            </div>
+            <p>Destructuring. Turn the object inside out like a sock. Make all the variables you want and assign them to the object name.</p>
+          </div>
+        </div>
+         
+        <div class="flex-row">
+          <div class="notes n-wide">
+            <h5>Destructure as a parameter</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const user = {
+  name: "Reed",
+  username: "Reedbarger",
+  email: "reed@gmail.com",
+  details: {
+    title: "Programmer"  
+  }  
+};
+
+// 👉 destructure as parameter
+function displayUserBio({ name, details: { title } }) {
+  console.log(`${name} is a ${title}`); 
+}
+
+// 👉 use object name
+displayUserBio(user);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›Reed is a Programmer
+                </code>
+              </pre>
+            </div>
+            <p>Destructuring is providing a reference to the object name. It can be used whole in a function parameter.</p>
+            <p>When calling that function, use the object's name. </p>
+          </div>
+          
+          
+          <div class="notes n-wide">
+            <h5>Challenge</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const recommendations = {
+  pancakes: 'Nowhere Man',
+  riceBowls: 'Pompoko',
+  beer: 'The Craft Beer Co.',
+  coffee: 'Coffee Roasters',
+  small_plates: 'Venetian Plates',
+  music: { 
+      traditional: 'Fiddler\'s Elbow', 
+      jazz: 'The Paris House'
+  }
+}
+
+const { beer, coffe } = recommendations;
+
+const { music: { traditional, jazz } } = recommendations;
+
+console.log(jazz)
+
+function displayMusicPlaces({ music: { traditional, jazz } }) {
+  console.log(`Head to ${traditional} or ${jazz} to listen to great music!`)
+}
+
+displayMusicPlaces(recommendations);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›The Paris House
+›Head to Fiddler's Elbow or The Paris House to listen to great music!
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>Merge Objects</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">Object.assign(target, ...sources)</div>
+          <div class="code-keyword">...</div>
+        </div>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const user = {
+  name: "",
+  username: "",
+  phoneNumber: "",
+  email: "",
+  password: ""  
+};
+
+const newUser = {
+  username: "ReedBarger",
+  email: "reed@gmail.com",
+  password: "mypassword"  
+};
+
+          // target, source
+Object.assign(user, newUser);
+
+console.log(user)
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›{
+  name: "", 
+  username: "ReedBarger", 
+  phoneNumber: "", 
+  email: "reed@gmail.com", 
+  password: "mypassword"
+}      
+                </code>
+              </pre>
+            </div>
+            <p><strong>Object.assign</strong> can take multiple objects as parameters, as well as new property key/value pairs and merge them together.</p>
+            <p>However this does mutate the source object.</p>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const user = {
+  name: "",
+  username: "",
+  phoneNumber: "",
+  email: "",
+  password: ""  
+};
+
+const newUser = {
+  username: "ReedBarger",
+  email: "reed@gmail.com",
+  password: "mypassword"  
+};
+
+const mergedUser = 
+  Object.assign({}, user, newUser, {verified:false})
+
+console.log(mergedUser)
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›{
+  name: "", 
+  username: "ReedBarger", 
+  phoneNumber: "", 
+  email: "reed@gmail.com", 
+  password: "mypassword", 
+  verified: false
+}
+                </code>
+              </pre>
+            </div>
+            <p>Use an empty object as your source when using <strong>Object.assign</strong>. This will then not mutate the original array.</p>
+          </div>
+          
+          <div class="notes n-wide">
+            <h5>Spread Operator</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const user = {
+  name: "",
+  username: "",
+  phoneNumber: "",
+  email: "",
+  password: "",
+  verified: true 
+};
+
+const newUser = {
+  username: "ReedBarger",
+  email: "reed@gmail.com",
+  password: "mypassword"  
+};
+
+const createdUser = { ...user, ...newUser, verified: false };
+console.log(createdUser);
+                </code>
+              </pre>
+            </div>
+            
+            <p>Instead of using Object.assign, we can use the spread <strong>...</strong> operator to do the same thing.</p>
+            <p>Order matters. newUser's properties will overwrite user's properties and the verified value <strong>false</strong> will be updated.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›{
+  name: "",
+  username: "ReedBarger", 
+  phoneNumber: "", 
+  email: "reed@gmail.com", 
+  password: "mypassword", 
+  verified: false
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>Maps vs Objects</h4>  
+        <div class="keyword-container">
+          <div class="code-keyword">Map</div>
+          <div class="code-keyword">.set()</div>
+          <div class="code-keyword">.get()</div>
+          <div class="code-keyword">forEach()</div>
+          <div class="code-keyword">WeakMap</div>
+          <div class="code-keyword">.size</div>
+        </div>
+          
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const map1 = new Map([
+  [1, 1],
+  [true, true]  
+]);
+
+map1.set('key', 'value');
+
+map1.forEach((value, key) => {
+  console.log(key, value);  
+});
+                </code>
+              </pre>
+            </div>
+            <p>Create a map with <strong>new</strong> and add to/update it with <strong>set</strong>.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›1,1
+›true,true
+›key,"value"
+                </code>
+              </pre>
+            </div>
+            <p><strong>Maps</strong> are different from objects in several useful ways. Objects only take strings as their keys and values. At least that they are interpreted.</p>
+            
+            <p>Maps can be iterated on by the higher order <strong>forEach</strong> method.</p>
+          </div>
+        
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// Data you don't want stored in separate objects:
+const user1 = { name: "john" }
+const user2 = { name: "mary" }
+
+const secretKey1 = "asldjfalskdjf";
+const secretKey2 = "alksdjfakjsdf";
+
+// Maps can have Objects as keys.
+const secretKeyMap = new Map([
+  [user1, secretKey1],
+  [user2, secretKey2]  
+]);
+
+// get method
+const key = secretKeyMap.get(user1);
+console.log(key);
+                </code>
+              </pre>
+            </div>
+            <p>Maps can hold objects as keys and as such can store data you would not want held in the same object. eg. users and passwords.</p>
+            <p>You can't retrieve the object data from such a key but you can use the <strong>get</strong> method to retrieve the value.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›asldjfalskdjf
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const secretKeyMap = new WeakMap([
+  [user1, secretKey1],
+  [user2, secretKey2]  
+]);
+                </code>
+              </pre>
+            </div>
+            <p>Optimized for garbage collection, <strong>WeakMap</strong> only accepts objects as keys. They will not be stored in the memory.</p>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const userMap = new Map([
+  ["name", "john"],
+  ["verified", true]  
+]);
+
+console.log(userMap.size);
+                </code>
+              </pre>
+            </div>
+            <p>Maps have an equivalent .length property: <strong>Map.size</strong></p>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›2     
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes n-wide">
+            <h5>Challenge / Summary</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const favouritePlace = {
+  music: "jazz",
+  name: "Paris House"
+};
+
+// convert to Map
+const favesMap = new Map([
+  ['music','jazz'],
+  ['name','Paris House']
+])
+
+// update with set
+favesMap.set('visited', true)
+favesMap.set('averageBill', 28)
+
+// list with forEach
+favesMap.forEach((value, key) => console.log(key, value))
+
+// retrieve with get
+console.log(favesMap.get('visited')) //true
+console.log(typeof favesMap.get('visited')) //boolean
+console.log(favesMap.get('averageBill')) //28
+console.log(typeof favesMap.get('averageBill')) //number
+                </code>
+              </pre>
+            </div>
+            <div class="snippet console">
+              <pre>
+                <code>
+›music,"jazz"
+›name,"Paris House"
+›visited,true
+›averageBill,28
+›true
+›boolean
+›28
+›number
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+        </div>
+        
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="arrays_sets" class="box">
+        <h2>Arrays</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword">.indexOf()</div>
+          <div class="code-keyword">.includes()</div>
+          <div class="code-keyword">.some()</div>
+          <div class="code-keyword">.every()</div>
+        </div>
+          
+        <h4>Check Element Existence</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const temperatures = [69, 82, 73, 64];
+
+console.log(temperatures.indexOf(67) === -1 ? false : true);
+console.log(temperatures.includes(72));
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+false
+true
+                </code>
+              </pre>
+            </div>
+            <p><strong>indexOf</strong> is an old array checking method, it returns <strong>-1</strong> if it finds a false value.</p>
+            <p><strong>.includes</strong> will return a direct boolean. Use this.</p>
+          </div>
+        
+          <div class="notes n-wide">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const temperatures = [
+  { degrees: 69, isRecordTemp: false }, 
+  { degrees: 82, isRecordTemp: true }, 
+  { degrees: 73, isRecordTemp: false }, 
+  { degrees: 64, isRecordTemp: false }
+];
+
+const result =   // iterable           truthy value
+  temperatures.some(element => element.isRecordTemp); 
+console.log(result);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+true
+                </code>
+              </pre>
+            </div>
+            <blockquote>
+              <p>The <strong>.some()</strong> method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.</p>
+            </blockquote>
+          </div>
+          
+          <div class="notes n-wide">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const temperatures = [
+  { degrees: 69, isRecordTemp: false }, 
+  { degrees: 82, isRecordTemp: true }, 
+  { degrees: 73, isRecordTemp: false }, 
+  { degrees: 64, isRecordTemp: false }
+];
+
+const result =      // iterable           falsy value
+  temperatures.every(element => !element.isRecordTemp); 
+
+console.log(result);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+false
+                </code>
+              </pre>
+            </div>
+            <blockquote>
+              <p>The <strong>every()</strong> method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.</p>
+            </blockquote>
+          </div>
+        </div>
+        
+        <h4>Perform Actions on All Elements</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">.map()</div>
+          <div class="code-keyword">.forEach()</div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes n-wide">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const temperatures = [
+  { degrees: 69, isRecordTemp: false },
+  { degrees: 82, isRecordTemp: true },
+  { degrees: 73, isRecordTemp: false },
+  { degrees: 64, isRecordTemp: false }
+];
+
+const newTemps = temperatures.map(temperature => {
+  temperature.isRecordTemp = true; 
+  return temperature;
+});
+
+console.log(newTemps);
+
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+[
+  {degrees: 69, isRecordTemp: true}, 
+  {degrees: 82, isRecordTemp: true}, 
+  {degrees: 73, isRecordTemp: true}, 
+  {degrees: 64, isRecordTemp: true}
+]
+                </code>
+              </pre>
+            </div>
+            <blockquote>
+              <p>The <strong>map()</strong> method creates a new array with the results of calling a provided function on every element in this typed array.</p>
+            </blockquote>
+            <p>Here we set all the temps to true.</p>
+          </div>
+        
+          <div class="notes n-wide">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const temperatures = [
+  { degrees: 69, isRecordTemp: false },
+  { degrees: 82, isRecordTemp: true },
+  { degrees: 73, isRecordTemp: false },
+  { degrees: 64, isRecordTemp: false }
+];
+
+const newTemps = temperatures.map(temperature => 
+  temperature.degrees > 70 ? { ...temperature, isHigh: true } : temperature 
+);
+
+console.log(newTemps);
+
+newTemps.forEach(temperature => {
+  if (temperature.isHigh) {
+    console.log(`Temperature ${temperature.degrees} was a record high last week!`);  
+  }
+})
+                </code>
+              </pre>
+            </div>
+            <p>Here <strong>map</strong> uses a conditional on every element. As it creates a new array, we create a new object for each element, use the spread operator to fill in the existing properties and add a new one <em>if</em> the temp is above 70.</p>
+            <p><strong>forEach</strong> will not create a new array, just perform an action on each element, mutating the existing array when told. Here it just prints out a string for each high temp.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›[
+  {degrees: 69, isRecordTemp: false}, 
+  {degrees: 82, isRecordTemp: true, isHigh: true}, 
+  {degrees: 73, isRecordTemp: false, isHigh: true}, 
+  {degrees: 64, isRecordTemp: false}
+]
+›Temperature 82 was a record high last week!
+›Temperature 73 was a record high last week!   
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>Subsets of Arrays</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">.filter()</div>
+          <div class="code-keyword">.find()</div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const restaurants = [
+  { name: 'Cap City Diner', milesAway: 2.2 },
+  { name: 'Chop Shop', milesAway: 4.1 },
+  { name: 'Northstar Cafe', milesAway: 0.9 },
+  { name: 'City Tavern', milesAway: 0.5 },
+  { name: 'Shake Shack', milesAway: 5.3 }
+]
+
+const results = restaurants.filter(restaurant => 
+  restaurant.name.startsWith('C') && restaurant.milesAway < 3
+)
+console.log(results);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›[
+  {name: "Cap City Diner", milesAway: 2.2}, 
+  {name: "City Tavern", milesAway: 0.5}
+]
+                </code>
+              </pre>
+            </div>
+            <blockquote>
+              <p>The <strong>filter</strong> method <em>creates a new array</em> with all elements that pass the test implemented by the provided function.</p>
+            </blockquote>
+            <p>Here we use short circuiting to filter for two conditions, 'begins with' and distance.</p>
+          </div>
+        
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const restaurants = [
+  { name: 'Cap City Diner', milesAway: 2.2 },
+  { name: 'Chop Shop', milesAway: 4.1 },
+  { name: 'Northstar Cafe', milesAway: 0.9 },
+  { name: 'City Tavern', milesAway: 0.5 },
+  { name: 'Shake Shack', milesAway: 5.3 }
+]
+
+const result = restaurants.find(restaurant => 
+  restaurant.name.toLowerCase().includes('north') && restaurant.milesAway < 2
+)
+console.log(result);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›{name: "Northstar Cafe", milesAway: 0.9}
+                </code>
+              </pre>
+            </div>
+            <blockquote>
+              <p>The <strong>find()</strong> method returns the value of the first element in the provided array that satisfies the provided testing function. If no values satisfies the testing function, undefined is returned.</p>
+            </blockquote>
+            <p>Here whe chain methods to get a specific result. Be as specific as possible as find will return the <em>first</em> element to meet the criteria.</p>
+            <p>NOTE <strong>includes</strong> is case sensitive.</p>
+          </div>
+        </div>
+        
+        <h4>Reduce</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">.reduce(( ) => { }, 0)</div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const menuItems = [
+  { item: "Blue Cheese Salad", price: 8 },
+  { item: "Spicy Chicken Rigatoni", price: 18 },
+  { item: "Ponzu Glazed Salmon", price: 23 },
+  { item: "Philly Cheese Steak", price: 13 },
+  { item: "Baked Italian Chicken Sub", price: 12 },
+  { item: "Pan Seared Ribeye", price: 31 }
+];
+
+const total = menuItems.reduce((accumulator, menuItem) => {
+  console.log(`
+    accumulator: ${accumulator},
+    menu item price: ${menuItem.price}
+  `);
+  return accumulator + menuItem.price;  
+}, 0);
+
+console.log(total); 
+                </code>
+              </pre>
+            </div>
+            <p>Reduce in action</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›accumulator: 0, menu item price: 8
+›accumulator: 8, menu item price: 18
+›accumulator: 26, menu item price: 23
+›accumulator: 49, menu item price: 13
+›accumulator: 62, menu item price: 12
+›accumulator: 74, menu item price: 31
+›105 
+                </code>
+              </pre>
+            </div>
+            <blockquote>
+              <p>The <strong>reduce()</strong> method executes a reducer function (that you provide) on each element of the array, resulting in single output value.</p>
+            </blockquote>
+            <p>Unlike the other higher order array methods, <strong>reduce</strong> has an <strong>initial value</strong> it iterates through an array and returns that value.</p>
+          </div>
+        
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const cars = [
+  { name: "Toyota", isElectric: false, weight: 1320 },
+  { name: "Ford", isElectric: false, weight: 1400 },
+  { name: "Volkswagen", isElectric: false, weight: 1370 },
+  { name: "Honda", isElectric: false, weight: 1375 },
+  { name: "Tesla", isElectric: true, weight: 1750 }, 👈
+  { name: "BMW", isElectric: true, weight: 1350 },  👈
+];
+
+
+const totalElectricWeight = cars
+  .filter(item => item.isElectric)
+  .reduce((acc, item) => {
+    return acc + item.weight
+}, 0)
+
+
+console.log(1750 + 1350)
+console.log(totalElectricWeight)
+                </code>
+              </pre>
+            </div>
+            <p>Challenge. Chain filter and reduce</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+3100
+3100
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const doubledNumbers = numbers.reduce((acc, num) => {
+  acc.push(num * 2);
+  return acc;
+}, []);
+
+console.log(numbers);
+console.log( doubledNumbers);
+                </code>
+              </pre>
+            </div>
+            <p>Using <strong>reduce</strong> with an empty array as its initial value. This is the exact same process as using the <strong>.map()</strong> method. We are creating a new array and populating it with the doubled numbers.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›[1, 2, 3, 4, 5, 6]
+›[2, 4, 6, 8, 10, 12]
+                </code>
+              </pre>
+            </div>
+          </div>
+        
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// Doesn't work
+const greaterNumbers = 
+  numbers.reduce((acc, num) => num > 3 ? acc.push(num) : acc, []);
+console.log(greaterNumbers);                
+      
+// Works
+const greaterNumbers = 
+  numbers.reduce((acc, num) => num > 3 ? acc.concat(num) : acc, []);
+console.log(greaterNumbers);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›[4, 5, 6]
+                </code>
+              </pre>
+            </div>
+            <p>Here we <strong>use</strong> reduce as the <strong>filter</strong> method. Reduce can be repurposed for many uses.</p>
+            <p><strong class="warning">Important!</strong> <strong>acc.push(num)</strong> doesn't work because in a ternary, it is the return value. It is not being pushed every iteration but all at once. This is solved by using <strong>acc.concat(num)</strong> instead.</p>
+            
+          </div>
+        </div>
+        
+        <h4>Spread Operator</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const lunchMenuIdeas = ['Harvest Salad', 'Southern Fried Chicken'];
+
+const allMenuIdeas = [...lunchMenuIdeas, 'Club Sandwich'];
+
+console.log(lunchMenuIdeas);
+console.log(allMenuIdeas);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›["Harvest Salad", "Southern Fried Chicken"]
+›["Harvest Salad", "Southern Fried Chicken", "Club Sandwich"]
+                </code>
+              </pre>
+            </div>
+            <p>If we create a variable assigned to an existing array, updating that variable via .push, .pop etc, will update the existing array. That is because Array, Function, and Object are all technically Objects. They are <strong>reference types</strong> as opposed to <strong>Primitives</strong></p>
+            <p>Using the spread operator will clone the array and leave the original unmuted.</p>
+            
+          </div>
+        </div>
+        
+        <h4>Destructuring Arrays</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const finalMenuItems = [
+  "American Cheeseburger",
+  "Southern Fried Chicken",
+  "Glazed Salmon"
+];
+
+const [one, two, three] = finalMenuItems
+
+console.log(one)
+                </code>
+              </pre>
+            </div>
+            <p>Standard destructuring</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+"American Cheeseburger"
+                </code>
+              </pre>
+            </div>
+          </div>
+        
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const finalMenuItems = [
+  "American Cheeseburger",
+  "Southern Fried Chicken",
+  "Glazed Salmon"
+];
+
+let [first, second] = finalMenuItems;
+console.log('before', { first },{ second });
+
+// reorder (must use let)
+[second, first] = [first, second];
+console.log('after', { first },{ second });
+                </code>
+              </pre>
+            </div>
+            <p>Destructuring to objects and reordering</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+"before", {
+  first: "American Cheeseburger"
+}, {
+  second: "Southern Fried Chicken"
+}
+"after", {
+  first: "Southern Fried Chicken"
+}, {
+  second: "American Cheeseburger"
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const finalMenuItems = [
+  "American Cheeseburger",
+  "Southern Fried Chicken",
+  "Glazed Salmon"
+];
+
+const [winner, ...losers] = finalMenuItems;
+
+console.log({ winner, losers });
+console.log( winner, losers );
+                </code>
+              </pre>
+            </div>
+            <p>Destructuring with spread to sub arrays/objects.</p>
+            <p>Use the <strong>rest</strong> operator to grab the <em>rest</em> of the items.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›{winner: "American Cheeseburger", losers: ["Southern Fried Chicken", "Glazed Salmon"]}
+›American Cheeseburger,["Southern Fried Chicken", "Glazed Salmon"]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>Turn Objects into Arrays</h4>
+        
+        <div class="keyword-container">
+          <div class="code-keyword">Object.keys()</div>
+          <div class="code-keyword">Object.values()</div>
+          <div class="code-keyword">Object.entries()</div>
+        </div>
+                
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const user = {
+  name: 'John',
+  age: 29  
+};
+
+console.log(Object.keys(user)) 
+
+console.log(Object.values(user));
+
+console.log(Object.entries(user));
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code> 
+›["name", "age"]
+›["John", 29]
+›[["name", "John"], ["age", 29]]
+                </code>
+              </pre>
+            </div>
+            <p>Basic methods to get arrays from objects.</p>
+          </div>
+        
+          <div class="notes">
+            <div class="snippet n-wide">
+              <pre>
+                <code class="language-js">
+const monthlyExpenses = {
+  food: 400,
+  rent: 1700,
+  insurance: 550,
+  internet: 49,
+  phone: 95  
+};
+
+const monthlyTotal = 
+  Object.values(monthlyExpenses).reduce((acc, item) => {
+    return acc + item
+}, 0)
+
+console.log(monthlyTotal)
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›2794
+                </code>
+              </pre>
+            </div>
+            <p>Using <strong>reduce</strong> and <strong>Object.values</strong> to total monthly expenses.</p>
+          </div>
+          <div class="notes">
+            <h5>Using reduce with destructuring to create a filtered,array of objects from an object with nested objects.</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const users = {
+  '2345234': {
+    name: "John",
+    age: 29
+  },
+  '8798129': {
+    name: "Jane",
+    age: 42
+  },
+  '1092384': {
+    name: "Fred",
+    age: 17 
+  }
+};
+
+console.log(Object.entries(users));
+
+       
+const usersOver20 = Object.entries(users)
+                // destructure array on each element
+    .reduce((acc, [id, user]) => {
+    console.log(id)  // serial number
+    console.log(user)// object
+  if (user.age > 20) {
+    // push object to array - id = id:id - object shorthand
+    acc.push({ ...user, id });
+  }  
+  return acc;
+}, []);
+console.log(usersOver20);
+                </code>
+              </pre>
+            </div>
+            <p>First, the users object is broken down into an array with three sub-arrays using <strong>Object.entries(users)</strong>. Don't think about the original object, Its now an array. See the first console.log</p>
+            
+            <p>Second, this array is <strong>reduced</strong> to a new initial value array (accumulator). The <em>Current Value</em> parameter is destructured from the first array. <strong>id</strong> is the serial number and <strong>user</strong> is the name and age object.</p> 
+            
+            <p>Third, the three instances of the reduce method are forced through a conditional. If the user.age is over 20, the initial value array (accumulator) is pushed an object that contains all the user data (name, age) via the spread operator and serial number id</p>
+            
+            <p>Note that during the push method the object shorthand is used. id is the same as id:id</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›[["1092384", {name: "Fred", age: 17}], ["2345234", {name: "John", age: 29}], ["8798129", {name: "Jane", age: 42}]]
+›1092384
+›{name: "Fred", age: 17}
+›2345234
+›{name: "John", age: 29}
+›8798129
+›{name: "Jane", age: 42}
+›[{name: "John", age: 29, id: "2345234"}, {name: "Jane", age: 42, id: "8798129"}]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+          
+        <h4>Sets</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const numbers = new Set([1, 1, 2, 3, 4, 4 ,5]);
+
+console.log(numbers) // Set
+
+for (const num of numbers) {
+  console.log(num);  // iteration but no copies
+}
+
+console.log(Array.from(numbers)) // Array no copies
+                </code>
+              </pre>
+            </div>
+            <p>Sets are like arrays but they only store unique values.</p>
+            <p>They can be iterated over with a <strong>for...of</strong> loop.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›Set
+›1
+›2
+›3
+›4
+›5
+›[1, 2, 3, 4, 5]
+                </code>
+              </pre>
+            </div>
+            <p><strong>Array.from()</strong> is one way to visualize the set <em>and turn it into an array obviously.</em></p>
+          </div>
+        
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const customerDishes = [
+  "Chicken Wings",
+  "Fish Sandwich",
+  "Beef Stroganoff",
+  "Grilled Cheese",
+  "Blue Cheese Salad",
+  "Chicken Wings",
+  "Reuben Sandwich",
+  "Grilled Cheese",
+  "Fish Sandwich",
+  "Chicken Pot Pie",
+  "Fish Sandwich",
+  "Beef Stroganoff"
+];
+
+// Error! Don't use square brackets
+// inside the set constructor.
+//  This is a set of one array 
+const dishesArr = new Set([customerDishes]); 
+
+const dishesSet = new Set(customerDishes);
+const dishesSetUpdate = new Set([...customerDishes, 'Hot Dogs']);
+
+for (const num of dishesArr) {
+console.log(num);  
+}
+
+for (const num of dishesSet) {
+console.log(num);  
+}
+
+for (const num of dishesSetUpdate) {
+console.log(num);  
+}
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›["Chicken Wings", "Fish Sandwich", "Beef Stroganoff", "Grilled Cheese", "Blue Cheese Salad", "Chicken Wings", "Reuben Sandwich", "Grilled Cheese", "Fish Sandwich", "Chicken Pot Pie", "Fish Sandwich", "Beef Stroganoff"]
+
+›Chicken Wings
+›Fish Sandwich
+›Beef Stroganoff
+›Grilled Cheese
+›Blue Cheese Salad
+›Reuben Sandwich
+›Chicken Pot Pie
+
+›Chicken Wings
+›Fish Sandwich
+›Beef Stroganoff
+›Grilled Cheese
+›Blue Cheese Salad
+›Reuben Sandwich
+›Chicken Pot Pie
+›Hot Dogs     
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const customerDishes = [
+  "Chicken Wings",
+  "Fish Sandwich",
+  "Beef Stroganoff",
+  "Grilled Cheese",
+  "Blue Cheese Salad",
+  "Chicken Wings",
+  "Reuben Sandwich",
+  "Grilled Cheese",
+  "Fish Sandwich",
+  "Chicken Pot Pie",
+  "Fish Sandwich",
+  "Beef Stroganoff"
+];
+
+const uniqueDishes = [...new Set(customerDishes), 'Calamari'];
+console.log(uniqueDishes)
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›["Chicken Wings", "Fish Sandwich", "Beef Stroganoff", 
+"Grilled Cheese", "Blue Cheese Salad", "Reuben Sandwich", 
+"Chicken Pot Pie", "Calamari"]
+                </code>
+              </pre>
+            </div>
+            <p>The spread operator accepts any iterable including a <strong>new Set</strong>. So, to create an array from a set and add elements to it in one line, use square brackets and <strong>spread</strong> a new set into it.</p>
+          </div>
+          
+        </div>
+        
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="classes" class="box">
+        <h2>Classes</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword">new</div>
+        </div>
+          
+        <h4>Constructors & Prototypes</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const student1 = {
+  id: 1,
+  name: "Reed",
+  subjects: [],
+  addSubject(subject) {
+    this.subjects = [...this.subjects, subject];
+  }
+}
+                </code>
+              </pre>
+            </div>
+            <p>This is a standard object. It has a function that populates the subjects array. It does this by updating/replacing the array. It spreads in the existing subject elements and add one mere defined by the 'subject' parameter.</p>
+          </div> 
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function Student(id, name, subjects = []) {
+  this.id = id;
+  this.name = name;
+  this.subjects = subjects;  
+}
+
+const student1 = new Student(1, 'Reed')
+const student2 = new Student(2, 'Doug')
+const student3 = new Student(3, 'Mary')
+                </code>
+              </pre>
+            </div>
+            <p>This is the constructor function for creating an object like the one above. It has to be an old school function declaration. It has a default parameter for 'subjects' that reverts to an empty array. Constructor functions are capitalized.</p>
+            <p>Here new instances of Student are created. The <strong>new</strong> keyword must be used</p>
+          </div> 
+          
+          <div class="notes n-wide">
+            <div class="snippet warning">
+              <pre>
+                <code class="language-js">
+Student.prototype.addSubject = function(subject) {
+  this.subjects = [...this.subjects, subject];   
+}
+
+Student.prototype.removeSubject = function(subject) {
+    this.subjects = this.subjects.filter((element)=> element !== subject)
+}
+                </code>
+              </pre>
+            </div>
+            <p>Here functions are added to the Student constructor via the <strong>Prototype Chain</strong> to add and remove subjects from the subjects array.</p>
+            <p>These must also be old school function declarations, because arrow functions cannot define their on 'this'. </p>
+          </div>
+          <div class="notes n-medium">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+student2.addSubject('Physics');
+student2.addSubject('Biology');
+student2.addSubject('Arts');
+console.log(student2.subjects);
+student2.removeSubject('Physics')
+console.log(student2.subjects);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+["Physics", "Biology", "Arts"]
+["Biology", "Arts"]
+                </code>
+              </pre>
+            </div>
+            <p>Subjects are added and removed from student2</p>
+          </div>
+        
+          <div class="notes">
+            <div class="snippet warning">
+              <pre>
+                <code class="language-js">
+function Book(id, title, author, themes = []) {
+  this.id = id
+  this.title = title
+  this.author = author
+  this.themes = themes	
+}
+
+const book1 = new Book(1, 'Slaughter House 5', 'Kurt Vonnegut', ['sci-fi', 'WWII'])
+const book2 = new Book(2, 'Frankenstein', 'Mary Shelly', ['sci-fi', 'horror'])
+
+Book.prototype.addTheme = function(theme){
+  this.themes = [...this.themes, theme ]
+}
+
+book1.addTheme('time travel')
+book2.addTheme('monster')
+
+console.log(book1.themes)
+console.log(book2.themes)
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›["sci-fi", "WWII", "time travel"]
+›["sci-fi", "horror", "monster"]
+                </code>
+              </pre>
+            </div>
+            <p>Challenge</p>
+          </div>
+        </div>
+        
+        <h4>Prototypical Inheritance and Classes</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">Object.getPrototypeOf()</div>
+          <div class="code-keyword">new</div>
+          <div class="code-keyword">class</div>
+          <div class="code-keyword">.prototype</div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function Student(id, name, subjects = []) {
+  this.id = id;
+  this.name = name;
+  this.subjects = subjects;
+}
+
+const student1 = new Student(1, 'Reed');
+
+console.log(Object.getPrototypeOf(student1));
+console.log(Object.getPrototypeOf(student1).constructor);
+console.log(student1.__proto__);
+console.log(student1.__proto__.__proto__);
+console.log(student1.__proto__.__proto__.__proto__);
+                </code>
+              </pre>
+            </div>
+            <p>Methods of identifying an object's constructor and using <strong>__proto__</strong> to move up the chain of inheritance.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›Student
+›Student(id, name, subjects = [])
+›Student
+›{}
+›null
+                </code>
+              </pre>
+            </div>
+            <p>Every single object has a prototype. Move up the chain and you will eventually get <em>null</em> (it no longer exists). Objects are reference types like variables. </p>
+            <hr>
+            <p><strong>Classes</strong> are constructor functions and are declared in a slightly different way. The <strong>constructor</strong> function keyword must invoked first inside the class and takes the same arguments..</p>
+            <p>When creating new instances of a class, not using <strong>new</strong> will throw an error</p>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// constructor function
+function Student(id, name, subjects = []) {
+  this.id = id;
+  this.name = name;
+  this.subjects = subjects;  
+}
+
+// Class
+class Student {
+  constructor(id, name, subjects = []) {
+    this.id = id;
+    this.name = name;
+    this.subjects = subjects;      
+  }  
+    
+  addSubject(subject) {
+      this.subjects = [...this.subjects, subject]; 
+  }  
+}
+
+Student.prototype.removeSubject = function(subject) {
+  this.subjects = this.subjects.filter((element)=> element !== subject)
+}
+
+const student1 = new Student(1, 'Reed', ['Arts']);
+console.log(student1.getStudentName());
+console.log(student1.id);
+
+student1.addSubject('Maths')
+console.log(student1.subjects);
+
+student1.removeSubject('Arts')
+console.log(student1.subjects)
+                </code>
+              </pre>
+            </div>
+            <p>Functions are still added to classes via the <strong>.prototype</strong> method.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›Student: Reed
+›1
+›["Arts", "Maths"]
+›["Maths"]
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes n-wide">
+            <div class="snippet warning">
+              <pre>
+                <code class="language-js">
+class Film {
+  constructor(id, title, director, releaseYear, genres = []){
+    this.id = id
+    this.title = title
+    this.director = director
+    this.releaseYear = releaseYear
+    this.genres = genres
+  }
+  
+  // rest parameter
+  addGenre(...genre) {            //spread operator
+    this.genres = [...this.genres, ...genre ]
+  }
+  
+  getTitle() {
+    return console.log(this.title)
+  }
+  
+}
+  // don't forget 'new'
+const heat = new Film(8364, 'Heat', 'Michael Mann', 1995, ['crime'])
+
+heat.getTitle() 
+heat.addGenre('drama', 'heist')
+
+console.log(heat.genres) 
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›Heat
+›["crime", "drama", "heist"]
+                </code>
+              </pre>
+            </div>
+            <p>Class Challenge</p>
+          </div>
+        </div>
+      
+         
+      <h4>Share Class features with Extend.</h4>
+      <div class="keyword-container">
+        <div class="code-keyword">extends</div>
+        <div class="code-keyword">super</div>
+      </div>
+      <div class="flex-row">
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// original
+class Product {
+  constructor(name, price, discountable) {
+    this.name = name;
+    this.price = price;
+    this.discountable = discountable;  
+  }  
+  
+  isDiscountable() {
+    return this.discountable;  
+  }
+}
+
+class SaleProduct extends Product {
+  constructor(name, price, discountable, percentOff) {
+     super(name, price, discountable);
+     this.percentOff = percentOff; 
+  }  
+  
+  getSalePrice() {
+     if (super.isDiscountable()) {
+       let discountValue = (this.price * ((100 - this.percentOff) / 100)).toFixed(2);
+       
+       return `${this.name}'s discounted price is: £${discountValue}`
+     } else {
+        return `${this.name} is not eligible for a discount`;
+     }
+  }
+}
+
+const saleProduct1 = new SaleProduct("Coffee Maker", 99, false, 20);
+const saleProduct2 = new SaleProduct("Air Fryer", 199, true, 20);
+console.log(saleProduct1.getSalePrice());
+console.log(saleProduct2.getSalePrice());
+
+                </code>
+              </pre>
+            </div>
+            <p><strong>class</strong> newThing <strong>extends</strong> oldThing</p>
+            <p>Use the <strong>constructor</strong> as before and add new parameters/properties as needed.</p>
+            <p>To refer to the original class's properties or methods prefix the parameters or functions with the keyword <strong>super</strong>. Saves you from writing <strong>.this</strong> over and over again and allows access to the original's methods.</p>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+"Coffee Maker is not eligible for a discount"
+"discounted price is: £159.20"
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>   
+        
+        <h4>Getters & Setters</h4>
+        <div class="flex-row">
+          <div class="notes n-wide">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+class Product {
+  constructor(name, price, discountable) {
+    this.name = name;
+    // price
+    this._price = price;
+    this.discountable = discountable;
+  }
+
+  get price() {
+    return this._price;
+  }
+  
+  set price(price) {
+    if (typeof price !== "number") {
+      return this._price; // return what it was
+    } else {
+      this._price = price; 
+    }
+  }
+}
+
+const product1 = new Product("Coffee Maker", 99.95, false);
+product1.price = 30;
+console.log(product1.price);
+product1.price = 'gcjyv';
+console.log(product1.price); // still 30
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+30
+30
+                </code>
+              </pre>
+            </div>
+            <p>There are no private variables in JavaScript. All code is accessible to everyone. To mark out properties and methods that need to be mutated but not reassigned, use <strong>get</strong> & <strong>set</strong>.</p>
+            <p>Use the same for both get and set methods and have the property prefixed with an underscore to signal other developers. <strong>set</strong> cannot work without <strong>get</strong>.</p>
+            <p>Here the <strong>set</strong> method works off a conditional so price is changed via dot notation, it will only work if price is a <strong>number</strong>.</p>
+            
+          </div>
+        </div>
+        
+        <h4>.bind()</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const isAuth = true;
+const user = {
+  favorites: []
+};
+
+class Product {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+    this.favoriteProduct = this.favoriteProduct.bind(this);
+  }
+
+  handleFavoriteProduct() {
+    if (isAuth) {
+      setTimeout(this.favoriteProduct, 1000);
+    } else {
+      console.log("You must be signed in to favorite products!");
+    }
+  }
+
+  favoriteProduct() {
+    user.favorites.push(this.name);
+    console.log(`${this.name} favorited!`);
+  }
+}
+
+const product1 = new Product('Coaster', 89.99)
+product1.handleFavoriteProduct() //3
+product1.favoriteProduct() //1
+console.log(user.favorites) //2
+                </code>
+              </pre>
+            </div>
+            <p>Here we use <strong>bind</strong> on the constructor's property <strong>this.favoriteProduct</strong> to explicitly bind the method to the constructor. If the <strong>this.favoriteProduct</strong> method is called in another function (as it is here) it does not reach out for the lexical scope.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›Coaster favorited!
+›["Coaster"]
+›Coaster favorited!
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <p>Simple MDN example:</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const module = {
+  x: 42,
+  getX: function() {
+    return this.x;
+  }
+};
+
+const unboundGetX = module.getX;
+// The function gets invoked at the global scope
+console.log(unboundGetX()); 
+// expected output: undefined
+
+const boundGetX = unboundGetX.bind(module);
+console.log(boundGetX());
+// expected output: 42
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+> undefined
+> 42
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+          
+      </section>
+      
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="async" class="box">
+        <h2>Async JavaScript</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword">async</div>
+          <div class="code-keyword">await</div>
+          <div class="code-keyword">try...catch</div>
+          <div class="code-keyword">response.ok</div>
+          <div class="code-keyword">response.status</div>
+        </div>
+          
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+navigator.geolocation.getCurrentPosition(position => {
+  console.log(position);
+});
+console.log('done'); //fires first
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›done
+›GeolocationPosition
+                </code>
+              </pre>
+            </div>
+            <p>This is asynchronous code. 'done' appears first in the log because using the geolocation API takes time to deliver a response.</p>
+          </div>
+        
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+navigator.geolocation.getCurrentPosition(position => {
+  console.log(position);
+  getRestaurants(position, restaurants => {
+    console.log(restaurants);
+    console.log('done');
+  })
+});
+                </code>
+              </pre>
+            </div>
+            <p>A way round this is to use callbacks. However, things quickly get stuck as the ever nested callbacks fire up the chain. We needed a way to hold data not yet determined and allow the rest of the code to run. We need a non-blocking solution.</p>
+          </div>
+        </div>
+        
+        <h4>Promises</h4>
+        <img src="https://res.cloudinary.com/bobbymaru/image/upload/v1610544233/Scrimba%20Images/mod1-3/promises_fog0ur.png" alt="" class="diagram">
+        <div class="keyword-container">
+          <div class="code-keyword">new Promise(((resolve, reject)) => {})</div>
+          <div class="code-keyword">.then()</div>
+          <div class="code-keyword">.catch()</div>
+        </div>
+        <div class="flex-row">
+          <div class="notes">
+            <p>A <strong>Promise</strong> is created with the promise constructor function. It has two parameters, resolve and reject.</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+new Promise((resolve, reject) => { });
+                </code>
+              </pre>
+            </div>
+            
+            <p>A <strong>Promise</strong> has 3 states. Its default state is <strong class="warning">pending</strong>. It can then be either <strong class="warning">fulfilled</strong> or <strong class="warning">rejected</strong></p>
+            <p><strong>resolve</strong> changes the status of a Promise to <strong class="warning">fulfilled</strong> </p>
+            <p><strong>reject</strong> changes the status of a Promise to <strong class="warning">rejected</strong></p>
+            
+            
+          </div>
+        
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const promiseA = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(), 1000);  
+});
+
+promiseA
+  .then(() => console.log('success'))
+  .catch(() => console.log('failure'));
+                </code>
+              </pre>
+            </div>
+            <p></p>
+            <p>the <strong>Promise</strong> object has two in built methods that listen for the changes in the promise's status. <strong>then</strong> and <strong>catch</strong>  both accepts their own function. They are often chained together.</p>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+success (after 1 second has passed)
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <h5>Resolve</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const promiseA = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('done'), 1000);  
+});
+
+promiseA
+  .then((value) => console.log(value))
+  .catch(() => console.log('failure'));
+                </code>
+              </pre>
+            </div>
+            <p>Here we pass value as the parameter of <strong>then</strong>. It returns the value of resolve - <em>done</em>.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+done
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <h5>Reject</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const promiseA = new Promise((resolve, reject) => {
+  setTimeout(() => reject(Error('Promise failed.')), 1000);  
+});
+
+promiseA
+  .then(value => console.log(value))
+  .catch(error => console.error(error));
+                </code>
+              </pre>
+            </div>
+            <p>Here we pass <strong>Error('Promise failed.')</strong> as the parameter of <strong>catch</strong>. It returns the value of reject - Error.</p>
+            <p>NOTE console.error() rather than console.log() for a real error</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+<span class="error">!Error: Promise failed.</span>
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <h5>Putting it Together</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// full breakdown
+const promise = new Promise((resolve, reject) => {
+  navigator.geolocation.getCurrentPosition(position => {
+    resolve(position); 
+  }, error => {
+    reject(error);
+  }); 
+});
+
+// simpler syntax     then/resolve    catch/reject
+const promise = new Promise((resolve, reject) => {
+                                        // success, error
+  navigator.geolocation.getCurrentPosition(resolve, reject); 
+});
+
+promise
+  .then(position => console.log(position))
+  .catch(error => console.error(error))
+  .finally(() => console.log('done'));
+                </code>
+              </pre>
+            </div>
+            <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition" target="_blank">Geolocation.getCurrentPosition()</a> method is used to get the current position of the device. It needs a success parameter but also takes an optional 'error' and 'options' parameters.</p>
+            <p>Here, the success parameter holds the position data as the Promise's resolve. The error parameter holds the error as the Promise's reject.</p>
+            <p>The <strong>finally()</strong>returns a Promise. When the promise is settled, i.e either fulfilled or rejected, the specified callback function is executed. This provides a way for code to be run whether the promise was fulfilled successfully or rejected once the Promise has been dealt with.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+[object GeolocationPosition] {
+  coords: [object GeolocationCoordinates] {
+    accuracy: 20,
+    altitude: null,
+    altitudeAccuracy: null,
+    heading: null,
+    latitude: xx.xxxxxxxx,
+    longitude: -xxx.xxxxxxxx,
+    speed: null
+  },
+  timestamp: 1609584456885
+}
+
+"done"
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>API's - Make Network Requests with fetch()</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">.fetch()</div>
+          <div class="code-keyword">.then()</div>
+          <div class="code-keyword">.catch()</div>
+        </div>
+        <div class="flex-row">
+          <div class="notes">
+            <h5>Terminology</h5>
+            
+            <p>An <strong>API</strong> is an application programming interface. It is a set of rules that allow programs to talk to each other. The developer creates the API on the server and allows the client to talk to it.</p>
+
+            <p><strong>REST</strong> determines how the API looks like. It stands for “Representational State Transfer”. It is a set of rules that developers follow when they create their API. One of these rules states that you should be able to get a piece of data (called a resource) when you link to a specific URL. <a href="https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/#top" target="_blank">Understanding And Using REST APIs</a></p>
+            <ul>
+              <li>API - Application Programming Interface: software to communicate with other software</li>
+              <li>API - it is simply helpful service. They can be very small. <strong>window.navigator.geolocation</strong> is an API</li>
+            </ul>
+            
+            <p>Most data available is through a REST API. Use CRUD, how data is used in applications: create, read, update, delete</p>
+            <ul>
+              <li>create POST http method</li>
+              <li>read GET</li>
+              <li>update PUT / PATCH</li>
+              <li>delete DELETE</li>
+            </ul>
+            
+            <p>For the following examples we use <a href="https://jsonplaceholder.typicode.com/" target="_blank">https://jsonplaceholder.typicode.com/</a>.</p>
+            
+            <h5>Fetch Basic:</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+console.log(
+  fetch('https://jsonplaceholder.typicode.com/posts/1')
+  );
+                </code>
+              </pre>
+            </div>
+            <p>This is the route, https://jsonplaceholder is the endpoint.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+Promise
+                </code>
+              </pre>
+            </div>
+            <p>It returns a <strong>Promise</strong>. This is baked in to the <strong>fetch</strong> method. We don't need to create the promise.</p>
+            
+            <h5>A GET Request:</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// GET /posts/1 - single blog post
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+// this also returns a promise, 
+// it needs to parse the body text as json
+  .then(response => response.json()) 
+// we use another .then method to log the parsed data.
+  .then(data => console.log(data))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+{
+  userId: 1, 
+  id: 1, 
+  title: "sunt aut facere repellat provident occaecati 
+  excepturi optio reprehenderit", body: "quia et 
+  suscipit suscipit recusandae consequuntur expedita 
+  et cum reprehenderit molestiae ut ut quas totam nostrum 
+  rerum est autem sunt rem eveniet architecto"
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        
+          <div class="notes">
+          
+            
+            <h5>A POST request:</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// Object we want to post
+const blogPost = {
+  title: "Cool post",
+  body: "cool text. Blah de blah. Blah blah blah.",
+  userId: 1  
+}
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: "POST", // 
+  headers: {      //
+     "Content-Type": "application/json" 
+  },
+  body: JSON.stringify(blogPost)
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+                </code>
+              </pre>
+            </div>
+            <p>For POSTs, the fetch parameters need not only the route, but an object containing the method, the headers and the body.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›{
+  title: "Cool post",
+  body: "cool text. Blah de blah. Blah blah blah.", 
+  userId: 1, 
+  id: 101
+}
+                </code>
+              </pre>
+            </div>
+            <ul>
+              <li><strong>.json()</strong> - returns a Promise that resolves with the result of parsing the body text as JSON</li>
+              <li><strong>JSON.stringify()</strong> - converts a JavaScript object or value to a JSON string, optionally replacing values if a replacer function is specified or optionally including only the specified properties if a replacer array is specified.</li>
+            </ul>
+            
+            <h5>A Failed request</h5>
+            <p>If the request fails for any reason, the the <strong>reject</strong> parameter will return an empty object. It won't run a <strong>catch</strong> callback if we have one.</p>
+            <p>However the response has a property called <strong>.ok</strong> which is a boolean. It remains true if the response status code is in the 200 range.</p>
+            <p>Status codes in the 400 range represent a problem with the user making the request (misspelt url). Codes in the 500 range represent a problem with the server.</p>
+            <p>Status codes can be got with the <strong>.status</strong> method.</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+                  // misspelt url
+fetch('https://jsonplaceholder.typicode.com/pots/1')
+.then(response => {
+  // response not true (not in the 200 range)
+  if (!response.ok) {
+    throw new Error(response.status); // throw specific error code
+  } else {
+    return response.json()
+  }
+})
+.then(data => console.log(data))
+.catch(error => console.error(error)) // catch
+                </code>
+              </pre>
+            </div>
+
+            <div class="snippet console">
+              <pre>
+                <code>
+<span class="error">!Error: 404</span>
+                </code>
+              </pre>
+            </div>
+            <p>List of public APIs:</p>
+            <a href="https://github.com/public-apis/public-apis" target="_blank">https://github.com/public-apis/public-apis</a>
+            
+          </div>
+        </div>
+        
+        <h5>Challenge</h5>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+fetch("https://jsonplaceholder.typicode.com/users/3")
+.then(response => {
+  if (!response.ok) {
+      throw new Error(response.status);
+  }
+  return response.json();
+})
+// .then(data => console.log(data))
+.then(person => {
+  console.log(`${person.name} works for ${person.company.name}`);
+})
+.catch(err => console.error(err));
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+Clementine Bauch works for Romaguera-Jacobson    
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>Async Await</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">async</div>
+          <div class="code-keyword">await</div>
+        </div>
+        <div class="flex-row">
+          <div class="notes n-wide">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// old way
+async function getBlogPost() {}
+
+// es6
+const getBlogPost = async () => {}
+                </code>
+              </pre>
+            </div>
+            <p>Declaring an <strong>async</strong> function. An async function will always return a Promise.</p>  
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function getBlogPost() {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('blog post'), 1000);
+  });
+  
+  promise
+    .then(value => console.log(value))
+    .finally(() => console.log('done'));
+}
+
+getBlogPost()
+                </code>
+              </pre>
+            </div>
+            <p>Resolving our promise and putting it in a variable. We create a new Promise and use setTimeOut to mimic a fetch request.</p>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›blog post
+›done
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+async function getBlogPost() {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('blog post'), 1000);
+  });
+  
+  const result = await promise;
+  console.log(result);
+  console.log('done');
+    // .then(value => console.log(value))
+    // .finally(() => console.log('done'));
+}
+
+getBlogPost()
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›blog post
+›done
+                </code>
+              </pre>
+            </div>
+            <p><strong>await</strong> can't work without <strong>async</strong>. Prepend a variable with <strong>await</strong> will pause our code, resolve the promise and continue the function it's in. The result variable is the resolved Promise.</p>
+          </div>
+          
+          <div class="notes n-wide">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+async function getPost() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');  
+  const data = await response.json();
+  console.log(data);
+}
+
+getPost();
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+{
+  body: "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto",
+  id: 1,
+  title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  userId: 1
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes n-wide">
+            <p>Putting it together</p>
+            <div class="snippet warning">
+              <pre>
+                <code class="language-js">
+async function getGithubUser() {
+  try {   
+    const response = await fetch('https://api.github.com/users/1jytf');   
+    if (!response.ok) {
+      throw new Error(`Oh no! the error code is: ${response.status}`);  
+    }
+    const data = await response.json();
+    console.log(data)
+  } catch (error) {
+    console.error(error);  
+  } 
+}
+
+getGithubUser();
+                </code>
+              </pre>
+            </div>
+            <ul>
+              <li>Create the async function.</li>
+              <li>Try it, assigning the response Promise to a variable. If it fails throw a specific error. If it doesn't, proceed to convert the Promise to JSON and log it.</li>
+              <li>Catch any error if applicable.</li>
+              <li>Log error</li>
+            </ul>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+<span class="error">!Error: Oh no! the error code is: 404</span>
+                </code>
+              </pre>
+            </div>
+            <p>To catch Errors we use <strong>try</strong> and <strong>catch</strong>. If you use a await on a Promise that gets rejected, Javascript throws a catchable error. <strong>try</strong> and <strong>catch</strong> will work with synchronous codes as well as asynchronous code. However, only when using <strong>await</strong> will our rejected Promise throw the error.</p>
+          </div>
+        </div>
+        
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="keep_clone" class="box">
+        <h2>Google Keep Clone</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword"></div>
+          <div class="code-keyword"></div>
+        </div>
+          
+        <div class="flex-row">
+          <div class="notes">
+            
+          </div>
+        
+          <div class="notes">
+            
+          </div>
+        </div>
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="essential" class="box">
+        <h2>Essential Concepts</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword"></div>
+          <div class="code-keyword"></div>
+        </div>
+          
+        <div class="flex-row">
+          <div class="notes">
+            
+          </div>
+        
+          <div class="notes">
+            
+          </div>
+        </div>
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="hacker" class="box">
+        <h2>Hacker News Clone</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword"></div>
+          <div class="code-keyword"></div>
+        </div>
+          
+        <div class="flex-row">
+          <div class="notes">
+            
+          </div>
+        
+          <div class="notes">
+            
+          </div>
+        </div>
+          
+      </section>
+      <footer></footer>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <button id="scroll-btn" class="btn-hidden" title="Go to top">⌃</button>
+    </main>
+  </div>
+  
+  
+  
+  
+  <!--  JS  -->
+  <script src="./JS/prism.js"></script>
+  <script src="./JS/app4.js"></script>
+  <script src="./JS/scrollbtn.js"></script>
+</body>
+</html>

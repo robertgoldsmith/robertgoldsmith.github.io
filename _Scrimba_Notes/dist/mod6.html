@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrimba Notes Font End Dev Path</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="themes/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/mod6.css">
+</head>
+<body>
+  <div id="wrapper">
+    
+    <header>
+      <h1>Scrimba Notes - Font End Dev Path</h1>
+      <h2>Module 6 - <span>Next Level JavaScript</span></h2>
+      <div class="modules-nav">
+        <a href="index.html" target="_blank">Modules 1-3 <br>
+          <small>HTML & CSS Basics</small><br> 
+          <small>Website Interactivity</small></a>
+        <a href="mod4-5.html" target="_blank">Modules 4-5 <br> 
+          <small>CSS & JavaScript Fundamentals</small></a>
+        <a href="js_bootcamp.html" target="_blank">JavaScript Bootcamp</a>
+      </div>
+    </header>
+    
+    <div class="layer-nav-container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#template-literals" class="nav-link">Template Literals</a>
+          </li>
+          <li>
+            <a href="#destructuring" class="nav-link">Destructuring</a>
+          </li>
+          <li>
+            <a href="#object-literals" class="nav-link">Object Literals</a>
+          </li>
+          <li>
+            <a href="#for-of" class="nav-link">For...Of</a>
+          </li>
+          <li>
+            <a href="#spead&rest" class="nav-link">Spread & Rest</a>
+          </li>
+          <li>
+            <a href="#arrow-func" class="nav-link">Arrow Functions</a>
+          </li>
+          <li>
+            <a href="#import-export" class="nav-link">Import / Export</a>
+          </li>
+          <li>
+            <a href="#pad" class="nav-link">padStart & padEnd</a>
+          </li>
+          <li>
+            <a href="#classes" class="nav-link">Classes</a>
+          </li>
+          <li>
+            <a href="#promises" class="nav-link">Promises</a>
+          </li>
+          <li>
+            <a href="#fetch" class="nav-link">Fetch</a>
+          </li>
+          <li>
+            <a href="#async" class="nav-link">Async & Await</a>
+          </li>
+          <li>
+            <a href="#sets" class="nav-link">Sets</a>
+          </li>
+          <li>
+            <a href="#challenges" class="nav-link">⭐️ Challenges</a>
+          </li>
+          <li class="last-list-item">
+            <a href="#pacman" class="nav-link">Pacman</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-hider"></div>
+    </div>
+  
+    
+    <!-- ---------
+            &lt;&gt;
+          ----------- -->
+    <!--   end of NAV ------------------------   -->
+    <main>
+      <section id="intro_es6" class="box">
+        <h2>Intoduction to ES6</h2>  
+        <h4 id="template-literals">Template Literals</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">`...`</div>
+          <div class="code-keyword">`${variable}`</div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+let word1 = 'Dylan';
+let word2 = 'Israel';
+let num1 = 2;
+let num2 = 3;
+
+// old way
+// const fullName = word1 + ' ' + word2;
+
+// const fullName = `${num1 + num2} ${word2}`;
+let example = `${word1}
+
+${word2}`;
+
+console.log(fullName);
+console.log(example)
+document.getElementById('example').innerText = example;
+                </code>
+              </pre>
+            </div>
+            <div class="snippet console">
+              <pre>
+                <code>
+5 Israel
+Dylan Israel
+                </code>
+              </pre>
+            </div>
+          </div>
+        
+          <div class="notes n-medium">
+            <img src="https://res.cloudinary.com/bobbymaru/image/upload/v1610544218/Scrimba%20Images/mod1-3/temp-literals_yjg4zr.png" alt="" class="diagram">
+            <p>Wrap everything in backticks <strong>` `</strong>.</p>
+            <p>Template literals will respect line breaks whereas old concatenated strings would not.</p>
+          </div>
+        </div>
+        
+        <h4 id="destructuring">Destructuring Objects</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const player = {
+  name: 'Lebron James',
+  club: 'LA Lakers',
+  address: {
+    city: 'Los Angeles'
+  }
+};
+
+//accessing via dot notation
+console.log( player.address.city );
+
+// destructuring 
+const { name, club, address: { city } } = player;
+
+console.log(name)
+console.log(club)
+console.log(city)
+console.log(`${name} plays for ${club}`);
+console.log(`${name} lives in ${city}`);
+                </code>
+              </pre>
+            </div> 
+          </div>
+        
+          <div class="notes">
+            <p>Destructuring is simply an alternative to accessing object properties via dot notation. We can assign as many of these properties to variables as we want.</p>
+            <p>Use curly braces like an object and assign them to the object name.</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+Los Angeles
+
+Lebron James
+LA Lakers
+LosAngeles
+Lebron James plays for LA Lakers
+Lebron James lives in Los Angeles
+
+                </code>
+              </pre>
+            </div>
+            
+          </div>
+        </div>
+        
+        <h4>Destructuring Arrays</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+let [firstName, middleName, lastName] = ['Dylan', 'Coding God', 'Israel'];
+
+lastName = 'Clements';
+
+console.log(lastName)  // Clements 
+
+
+const myArr = ['ice cream', 'bacon', 99]
+
+let [desert, meat, num] = myArr
+
+console.log(meat) // bacon
+
+//reassigned variable
+desert = 'Chocolate Cake'
+console.log(desert) // Chocolate Cake
+
+// array is however, unchanged
+console.log(myArr) // ['ice cream', 'bacon', 99]
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›Clements
+›bacon
+›Chocolate Cake
+›["ice cream", "bacon", 99]
+                </code>
+              </pre>
+            </div>
+            <p>Destructuring arrays is very similar to destructuring objects. Create an array of variable names and assign it to the array. Each variable name will match the index of the original array.</p>
+            <p>Variables can be reassigned, but this will not mutate the array.</p>
+          </div>
+        </div>
+        
+        <h4 id="object-literals">Object Literal</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// old way
+function addressMaker(city, state) {
+  const newAdress = {newCity: city, newState: state};
+  
+  console.log(newAdress);
+}
+
+addressMaker('Austin', 'Texas');
+
+// object literal
+function addressMaker(city, state) {
+  const newAdress = {city, state};
+  
+  console.log(newAdress);
+}
+
+addressMaker('Austin', 'Texas');
+                </code>
+              </pre>
+            </div>
+            <p>When creating an object inside a function, object literals will assume the parameter names as the object property keys.</p>
+
+            <div class="snippet console">
+              <pre>
+                <code>
+›{newCity: "Austin", newState: "Texas"}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+          
+        <div class="flex-row">
+          <div class="notes">
+            <p>Object Literal Challenge</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function addressMaker(address) {
+  // the argument is an object
+  // destructure the object into variables
+  const {city, state} = address;
+  // assign variables as properties and their values
+  const newAddress = {
+      city,
+      state,
+      country: 'United States'
+  };
+  // log with template literals
+  console.log(`${newAddress.city}, ${newAddress.state}, ${newAddress.country}`)
+}
+
+addressMaker({city: 'Austin', state: 'Texas'});
+                </code>
+              </pre>
+            </div>
+
+            <div class="snippet console">
+              <pre>
+                <code>
+›Austin, Texas, United States
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        
+        <h4 id="for-of">For ... of</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">for(let item of iterable) { } </div>
+        </div>
+        <div class="flex-row">
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const students = [ 
+  { name: "John", city: "New York" },
+  { name: "Peter", city: "Paris"},
+  { name: "Kate", city: "Sidney" }
+]
+
+for(const student of students) {
+  console.log(`${student.name} lives in  ${student.city}`)  
+}
+
+
+const pet = "cat"
+
+for(let char of pet){
+    console.log(char)
+}
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›John lives in New York
+›Peter lives in Paris
+›Kate lives in Sidney
+
+›c
+›a
+›t
+                </code>
+              </pre>
+            </div>
+            
+            <p><strong>for...of</strong> will loop through any iterable, not just arrays. Strings, maps and sets will also work.</p>
+          </div>
+        </div>
+        
+        <h4 id="spead&rest">Spread Operator (syntax)</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">...</div>
+        </div>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+let contacts = ["Mary", "Joel", "Danny"];
+
+let personalFriends = contacts;
+
+contacts.push("John");
+
+console.log(contacts);
+console.log(personalFriends);
+                </code>
+              </pre>
+            </div>
+
+            <div class="snippet console">
+              <pre>
+                <code>
+›["Mary", "Joel", "Danny", "John"]
+›["Mary", "Joel", "Danny", "John"]
+                </code>
+              </pre>
+            </div>
+            <p>When assigning a variable to an array you are in fact just referencing that array. Changes made to it will be updated on the variable.</p>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+let contacts = ["Mary", "Joel", "Danny"];
+
+let personalFriends = [...contacts, 'Dave'];
+
+contacts.push("John");
+
+console.log(contacts);
+console.log(personalFriends);
+                </code>
+              </pre>
+            </div>
+
+            <div class="snippet console">
+              <pre>
+                <code>
+›["Mary", "Joel", "Danny", "John"]
+›["Mary", "Joel", "Danny", "Dave"]
+                </code>
+              </pre>
+            </div>
+            <p>Crucially the <strong>Spread</strong> operator will copy the array or object its used upon.</p>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+let person = {
+  name: "Adam",
+  age: 25,
+  city: "Manchester"
+}
+
+let employee = {
+  ...person,
+  salary: 50000,
+  position: "Software Developer"
+}
+
+console.log(employee);
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›{name: "Adam",
+  age: 25, 
+  city: "Manchester", 
+  salary: 50000, 
+  position: "Software Developer"}
+                </code>
+              </pre>
+            </div>
+            <p>The <strong>Spread</strong> operator lets you grab the properties from other whole objects and apply them to new ones.</p>
+          </div>
+          
+        </div>
+        
+        <h4>Rest Parameter</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">...</div>
+        </div>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function sumAll(...args) { // args is the name for the array
+  let sum = 0;
+
+  for (let arg of args) sum += arg;
+
+  return sum;
+}
+
+console.log( sumAll(1) ); // 1
+console.log( sumAll(1, 2) ); // 3
+console.log( sumAll(1, 2, 3) ); // 6
+                </code>
+              </pre>
+            </div>
+
+            <div class="snippet console">
+              <pre>
+                <code>
+1
+3
+6
+                </code>
+              </pre>
+            </div>
+            <p>The rest parameter allows for the inclusion of a variety of arguments in functions.</p>
+            <blockquote>
+              <p><strong>Telling the Difference</strong></p>
+              <p>From javascript.info:</p>
+              <p>When we see <strong>"..."</strong> in the code, it is either rest parameters or the spread syntax. There’s an easy way to distinguish between them:</p>
+              <ul>
+                <li>When <strong>...</strong> is at the end of function parameters, it’s “rest parameters” and gathers the rest of the list of arguments into an array.</li>
+                <li>When <strong>...</strong> occurs in a function call or alike, it’s called a “spread syntax” and expands an array into a list.</li>
+              </ul>
+            </blockquote>
+          </div>
+          
+        </div>
+        
+        <h4 id="arrow-func">Arrow Functions</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">() =></div>
+        </div>
+        
+        <div class="flex-row">
+        <div class="notes n-wide">
+          <div class="snippet">
+            <pre>
+              <code class="language-js">
+//old way 
+var dinnerMenu = function(food) {
+  return console.log("I'm going to eat " + food + " for dinner");
+}
+
+// valid. no arguments, no return, no curly braces
+const dinnerMenu = () => console.log("I'm going to eat a burger for dinner")
+
+// valid. One argument, no parentheses, no return, no curly braces             
+const dinnerMenu = food => console.log(`I'm going to eat ${food} for dinner`);
+
+// valid. more that one argument, return optional / needed for more than one line
+const dinnerMenu = (food1, food2) => {
+  return console.log(`I'm going to eat ${food1} and ${food2} for dinner`);
+}
+              </code>
+            </pre>
+          </div>
+          <p>If an arrow function is simply returning a single line of code, you can omit the statement brackets and the return keyword. This tells the arrow function to return the statement.</p>
+        </div>
+        <div class="notes n-wide">
+          <h5>Default Param(eters)</h5>
+          <div class="snippet">
+            <pre>
+              <code class="language-js">
+const leadSinger = (artist = "someone") => {
+  console.log(`${artist} is the lead singer of Cold Play`);
+}
+
+leadSinger();
+leadSinger("Chris Martin");
+              </code>
+            </pre>
+          </div>
+          
+          <div class="snippet console">
+            <pre>
+              <code>
+›someone is the lead singer of Cold Play
+›Chris Martin is the lead singer of Cold Play
+              </code>
+            </pre>
+          </div>
+          <p>Default parameters allow a fallback option if the function was called with no argument. This will stop <strong>undefined</strong> from being returned. Be sure it is in quotes if it is a string.</p>
+        </div>
+        </div>
+        
+        <h4 id="import-export">Import / Export</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">export const data = [1,2,3]</div>
+          <div class="code-keyword">import { data } from './example.js'</div>
+        </div>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet warning">
+              <pre>
+                <code class="language-js">
+export const data = [1,2,3];
+                </code>
+              </pre>
+            </div>
+            <p>example.js</p>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+import { data } from './example.js'
+
+let updatedData = data
+
+updatedData.push(5)
+console.log(updatedData); 
+                </code>
+              </pre>
+            </div>
+            <p>index.js</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›[1, 2, 3, 5]
+                </code>
+              </pre>
+            </div>
+            
+          </div>
+        </div>
+        
+        <h4 id="pad">padStart & padEnd</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">.padStart()</div>
+          <div class="code-keyword">.padEnd()</div>
+        </div>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+let example = 'Dylan';
+
+console.log(example.padEnd(10, 'a'));
+console.log(example.padStart(10, 'a'));
+console.log(example.padEnd(20, 'abba'));
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›Dylanaaaaa
+›aaaaaDylan
+›Dylanabbaabbaabbaabb
+                </code>
+              </pre>
+            </div>
+          </div>
+          <p>Padding takes a string length and adds to the beginning or end if there is space to fill. It will repeat until the string length is fulfilled.</p>
+          <p>Without a second string argument, it will add space accordingly. If there is smaller number than the original string length, the original string will be unaffected.</p>
+        </div>
+        
+        <h4 id="classes">Classes</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">class</div>
+          <div class="code-keyword">constructor</div>
+          <div class="code-keyword">static</div>
+        </div>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet warning">
+              <pre>
+                <code class="language-js">
+export class Animal {
+  constructor(type, legs) {
+    this.type = type;
+    this.legs = legs;
+  }
+  
+  // default parameter
+  makeNoise(sound = 'Loud Noise') {
+    console.log(sound);
+  }
+  
+  // getter
+  get metaData() {
+    return `Type: ${this.type}, Legs: ${this.legs}`;
+  }
+  
+  static return10() {
+    return 10;
+  }
+}
+                </code>
+              </pre>
+            </div>
+            <p class="mono">animal.js</p>
+            <blockquote>
+              The <strong>static</strong> keyword defines a static method or property for a class. Neither static methods nor static properties can be called on instances of the class. Instead, they're called on the class itself. Static methods are often utility functions, such as functions to create or clone objects, whereas static properties are useful for caches, fixed-configuration, or any other data you don't need to be replicated across instances.
+            </blockquote>
+          </div>
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+import { Animal } from './animal.js';
+
+// new instance of animal
+let tiger = new Animal('Cat', 4);
+
+tiger.legs = 3;
+console.log(tiger.legs)
+
+tiger.makeNoise(); // default parameter
+tiger.makeNoise('Roar'); 
+
+// retrieve metadata from get in class
+console.log(tiger.metaData);
+
+// static - not specific to tiger
+console.log(Animal.return10());
+                </code>
+              </pre>
+            </div>
+            <p class="mono">index.js</p>
+            <div class="snippet console">
+              <pre>
+                <code>
+›3
+›Loud Noise
+›Roar
+›Type: Cat, Legs: 3
+›10
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>Extending a Class</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">extends</div>
+          <div class="code-keyword">super</div>
+        </div>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet warning">
+              <pre>
+                <code class="language-js">
+export class Animal {
+  constructor(type, legs) {
+    this.type = type;
+    this.legs = legs;
+  }
+  
+  makeNoise(sound = 'Loud Noise') {
+    console.log(sound);
+  }
+  
+  get metaData() {
+    return `Type: ${this.type}, Legs: ${this.legs}`;
+  }
+  
+  static return10() {
+    return 10;
+  }
+}
+
+// Extend animal - now includes tail
+export class Dog extends Animal {
+  constructor(type, legs, tail) {
+    // include properties from parent class
+    super(type, legs);
+    this.tail = tail;
+  }
+}
+                </code>
+              </pre>
+            </div>
+            <p class="mono">animal.js</p>
+            <blockquote>
+              The <strong>super</strong> keyword is used to access and call functions on an object's parent.
+            </blockquote>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+// import multiple classes
+import { Animal, Dog } from './animal.js';
+
+let cat = new Animal('Cat', 4);
+
+console.log(cat.metaData)
+
+//------------------------------------------
+let barney = new Dog('Labrador', 4, 1)
+
+console.log(barney.tail)// 1
+
+// tail new to dog class, not included in Animal metaData
+console.log(barney.metaData) 
+barney.makeNoise('Woof!')
+                </code>
+              </pre>
+            </div>
+            <p class="mono">index.js</p>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›Type: Cat, Legs: 4
+›1
+›Type: Labrador, Legs: 4
+›Woof!
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <p>Classes Challenge</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+class Player {
+  constructor(name, country) {
+      this.name = name
+      this.country = country
+  }
+  
+  announce() {
+      console.log(`${this.name} was born in ${this.country}`)
+  }
+}
+
+let gary = new Player('Vader', 'Mos Eisley')
+
+gary.announce()
+
+//--------------------------------
+
+class TennisPlayer extends Player {
+  constructor(name, country, age){
+      super (name, country)
+      this.age = age
+  }
+  describe(){
+      console.log(`${this.name} is ${this.age} years old and really good at Tennis`)
+  }
+}
+
+const mando = new TennisPlayer('Din Djarin', 'Navarro', 46)
+
+mando.describe()
+mando.announce()
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›Vader was born in Mos Eisley
+›Din Djarin is 46 years old and really good at Tennis
+›Din Djarin was born in Navarro
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="notes n-medium">
+            <h5>Summary</h5>
+            <p>Declare with the <strong>class</strong> keyword</p>
+            <p>Inside the class, use a <strong>constructor</strong> function to declare you properties</p>
+            <p>Inside the <strong>constructor</strong> function, use the <strong>this</strong> keyword to set up the class's properties</p>
+            <br>
+            <p>Inside the class, declare any functions you want. <strong>()</strong> parentheses are all thats needed to indicate a function. Set up a default parameter if needed ie "Loud noise".</p>
+            <br>
+            <p>Create an instance of the class by first declaring a variable and then assigning it to that class with the <strong>new</strong> keyword.</p>
+            <p>Enter its property values as parameters of the new class.</p>
+            <br>
+            <p>Build upon an existing class by (as before) declaring with <strong>class</strong> and with the <strong>extends</strong> keyword, followed by the original class name.</p>
+            <p>Add new values to the <strong>constructor</strong> function</p>
+            <p>Transfer the original classes' properties with the <strong>super</strong> keyword. Add them with parentheses like arguments in a function.</p>
+          </div>
+        </div>
+        
+        <h4 id="promises">Promises</h4>
+        <div class="keyword-container">
+          <div class="code-keyword">promise</div>
+          <div class="code-keyword">fetch</div>
+          <div class="code-keyword">then</div>
+          <div class="code-keyword">catch</div>
+        </div>
+        <img src="https://res.cloudinary.com/bobbymaru/image/upload/v1610544233/Scrimba%20Images/mod1-3/promises_fog0ur.png" alt="" class="diagram">
+        <div class="flex-row">
+          <div class="notes n-wide">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const buyFlightTicket = () => {
+  return new Promise( (resolve, reject) => {
+    //simulate response time
+    setTimeout( () => {
+      //simulate no error
+      const error = false;
+      
+      if( error ) {
+        reject("Sorry your payment was not successful")
+      } else {
+        resolve("Thank you, your payment was successful");
+      }
+    }, 3000)
+  })
+}
+
+//chained methods
+buyFlightTicket()
+.then( (success) => console.log(success)) // fires the resolve response
+.catch( (error) => console.log(error) );  // fires the reject response
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›Thank you, your payment was successful
+                </code>
+              </pre>
+            </div>
+            <p><strong>Promises</strong> are a way of handling asynchronous code. They are most common dealing with APIs. They have three possible states, <strong>fulfilled</strong>, <strong>pending</strong> and <strong>rejected</strong>.</p>
+          </div>
+        </div>
+
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="fetch" class="box">
+        <h2>Fetch</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword">fetch()</div>
+          <div class="code-keyword">.then()</div>
+          <div class="code-keyword">.try()</div>
+          <div class="code-keyword">.throw()</div>
+          <div class="code-keyword">.catch()</div>
+        </div>
+        <a href="https://jsonplaceholder.typicode.com/" target="_blank">json placeholder</a>
+          
+        <div class="flex-row">
+          <div class="notes">
+            <h5>A Get Request</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+fetch('https://jsonplaceholder.typicode.com/comments/1')
+.then(response => response.json())
+.then(data => console.log(data))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›{
+  postId: 1, 
+  id: 1, 
+  name: "id labore ex et quam laborum", 
+  email: "Eliseo@gardner.biz", 
+  body: "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
+}
+                </code>
+              </pre>
+            </div>
+            <p>Our endpoint is jsonplaceholder.typicode.com, our route is comments/1.</p>
+            <p><strong>fetch</strong> returns a Promise.</p>
+            <p>The response also returns a Promise, <strong>.json()</strong> takes the data and returns an object. <em>Don't forget the parentheses at the end of .json()</em></p>
+            <p>Here we <strong>get</strong> comment 1.</p>
+          </div>
+        
+          <div class="notes">
+            <h5>A Post Request</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+fetch('https://jsonplaceholder.typicode.com/comments', {
+  method: "POST",
+  body: JSON.stringify({
+      postId: 1,
+      name: 'Dylan',
+      email: 'dylansemail310@gmail.com',
+      body: 'That was dope!'
+  })
+})
+.then(response => response.json())
+.then(data => console.log(data))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›{id: 501} 
+                </code>
+              </pre>
+            </div>
+            <p>Here we want to post a comment. <strong>fetch</strong> takes a second parameter, an object. It has a method ("POST") and a body which <em>must be stringified to JSON</em>.</p>
+          </div>
+          
+          <div class="notes">
+            <h5>A Post Request with Headers</h5>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+fetch('https://jsonplaceholder.typicode.com/comments', {
+  method: 'POST',
+  body: JSON.stringify({
+    postId: 'Alpha',
+    name: 'Gary',
+    body: 'This is a new post'
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8'
+  }
+})
+.then(response => response.json())
+.then(json => console.log(json))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›{postId: "Alpha", name: "Gary", body: "This is a new post", id: 501}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="async" class="box">
+        <h2>Async & Await</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword">async</div>
+          <div class="code-keyword">await</div>
+        </div>
+          
+        <div class="flex-row">
+          <div class="notes">
+            <p>Synchronous JavaScript</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const photos = [];
+
+function photoUpload() {
+  let uploadStatus = new Promise((resolve, reject) => {
+    setTimeout( () => {
+      photos.push("Profile Pic");
+      resolve("Photo Uploaded")
+    }, 3000)
+  })
+    
+  let result = uploadStatus;
+  
+  console.log(result);
+  console.log(photos.length);
+}
+
+photoUpload();
+                </code>
+              </pre>
+            </div>
+
+            <div class="snippet console">
+              <pre>
+                <code>
+›Promise
+›0
+                </code>
+              </pre>
+            </div>
+            <p>This doesn't work as everything is resolved straight away. The console logging part of the function doesn't wait for the 3 seconds to be up.</p>
+          </div>
+        
+          <div class="notes">
+            <p>Asynchronous JavaScript</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const photos = [];
+
+async function photoUpload() {
+  let uploadStatus = new Promise((resolve, reject) => {
+    setTimeout( () => {
+      photos.push("Profile Pic");
+      resolve("Photo Uploaded")
+    }, 3000)
+  })
+  
+  let result = await uploadStatus;
+  
+  console.log(result);
+  console.log(photos.length);
+}
+
+photoUpload();  
+                </code>
+              </pre>
+            </div>
+
+            <div class="snippet console">
+              <pre>
+                <code>
+›Photo Uploaded
+›1
+                </code>
+              </pre>
+            </div>
+            <p>By declaring this an <strong>async</strong> function, it cues up any variables declared with <strong>await</strong>. </p>
+          </div>
+        </div>
+          
+        <h5>Challenge</h5>
+        <div class="flex-row">
+          
+          <div class="notes">
+            <p>classic function syntax, whole object.</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const apiUrl = "https://api.chucknorris.io/jokes/random";
+
+async function getJoke() {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    
+    console.log(data);
+}
+
+getJoke();
+                </code>
+              </pre>
+            </div>
+
+            <div class="snippet console">
+              <pre>
+                <code>
+›{categories: [], 
+  created_at: "2020-01-05 13:42:22.701402", 
+  icon_url: "https://assets.chucknorris.host/img/avatar/chuck-norris.png", 
+  id: "aEVUWI-cQASYahoQie4cUA", 
+  updated_at: "2020-01-05 13:42:22.701402", 
+  url: "https://api.chucknorris.io/jokes/aEVUWI-cQASYahoQie4cUA", 
+  value: "Chuck Norris will roundhouse kick your ass unless you submit a Chuck Norris fact."}
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <p>Arrow function syntax, .value</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const apiUrl = "https://api.chucknorris.io/jokes/random";
+
+const tellJoke = async () => {
+    const response = await fetch(apiUrl)
+    const joke = await response.json()
+    console.log(joke.value)
+}
+
+tellJoke()
+                </code>
+              </pre>
+            </div>
+
+            <div class="snippet console">
+              <pre>
+                <code>
+Chuck Norris will roundhouse kick your ass unless you submit a Chuck Norris fact.
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+            
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="sets" class="box">
+        <h2>Sets</h2>  
+        
+        <div class="keyword-container">
+          <div class="code-keyword">new Set</div>
+          <div class="code-keyword">.size</div>
+          <div class="code-keyword">.add()</div>
+          <div class="code-keyword">.delete()</div>
+          <div class="code-keyword">.has()</div>
+          <div class="code-keyword">.clear()</div>
+        </div>
+          
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+const exampleSet = new Set([1,1,1,1,2,2,2,2]);
+
+console.log(exampleSet) // returns 'Set'
+
+exampleSet.add(5); // adds 5 
+exampleSet.add(5).add(17); // adds 17, not 5
+
+console.log(exampleSet.delete(5)); // returns true
+
+console.log(exampleSet.has(5)); // returns false
+
+console.log(exampleSet.size); // returns 3 ([1,2,17])
+
+exampleSet.clear() // empties Set
+
+console.log(exampleSet.size); // returns 0
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+Set
+true
+false
+3
+0
+                </code>
+              </pre>
+            </div>
+            
+            <p>Sets only contain unique values. They can be iterated on with <strong>for...each</strong> and the like. NOTE <strong>.delete()</strong> will return true.</p>
+          </div>
+        
+          
+        </div>
+          
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="challenges" class="box">
+        <h2>Challenges</h2>
+        <h4>Array Replace</h4>
+        <div class="flex-row">
+          <div class="notes">
+            
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function arrayReplace(array, elemToReplace, substitutionElem) {
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] === elemToReplace) {
+        array[i] = substitutionElem;
+    }
+  }
+  return array;
+}
+
+console.log(arrayReplace([1,2,1], 1, 3))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›[3, 2, 3]   
+                </code>
+              </pre>
+            </div>
+          </div>
+          <p>A classic for  loop is often best. We don't need map or reduce or for...of. This is best for changing the element on each iteration, we're not doing something else.</p>  
+        </div>
+        
+        <h4>Palindrome Checker</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <p>compare front and back letters</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function caseInsensitivePalindrome(str) {
+  let reverseIndex = str.length -1
+  const test = str.toLowerCase()
+  for(let i = 0; i < test.length; i++){
+    console.log(`${test[i]}  ${test[reverseIndex]}`)
+    if(test[i] === test[reverseIndex]){ 
+      reverseIndex--
+    } else {
+      return false
+    }   
+  }
+  return true
+}
+
+console.log(caseInsensitivePalindrome('racecar'))
+console.log(caseInsensitivePalindrome('gavin'))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›r r
+›a a
+›c c
+›e e
+›c c
+›a a
+›r r
+›true
+›g n
+›false
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <p>Comparative</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function caseInsensitivePalindrome(str) {
+  const caselessStr = str.toLowerCase();
+  let reversedCaselessStr = '';  
+  for(let i = caselessStr.length - 1; i >= 0; i--) {
+    reversedCaselessStr += caselessStr[i];
+  } 
+  return caselessStr === reversedCaselessStr;
+}
+
+console.log(caseInsensitivePalindrome('racecar'))
+console.log(caseInsensitivePalindrome('gavin'))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›true
+›false          
+                </code>
+              </pre>
+            </div>
+            <p><code class="qs">.split('').reverse().join('')</code> will work just fine, but it is labour intensive (expensive) to use.</p>
+            <p>Don't forget to use a for loop backwards if needed.</p>
+            <p>returning a comparison will result in a boolean value.</p>
+          </div>
+        </div>
+        
+        <h4>Enclose in Brackets (3 ways)</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+//-- 1 ------------------------
+function encloseInBrackets(str) {
+  return '('.concat(str,')')  
+}
+
+//-- 2 ------------------------
+function encloseInBrackets(str) {
+  return str.replace(str, '(' + str + ')') 
+}
+
+//-- 3 ------------------------
+function encloseInBrackets(str) {
+  const arr = Array.from(str)
+  arr.push(')')
+  arr.unshift('(')
+  return arr.join('')
+}
+
+console.log(encloseInBrackets('hello'))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›(hello)
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function encloseInBrackets(str) {
+  // const solution1 = '(' + str + ')';
+  // const solution2 = `(${str})`;
+  const solution3 = '('.concat(str, ')');
+  
+  return solution3;
+}
+
+console.log(encloseInBrackets('hello'))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›(hello)         
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>Number Factorial</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function factorialNumber(num) {
+  let sum = 1
+  for(let i = 1; i <= num; i++){
+    sum *= i
+  }
+  return sum
+}
+
+console.log(factorialNumber(5))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+120
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>First Digit</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <p>regex</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function firstDigit(str) {
+  let regEx = /\d/ //any digit, first match (no global (g) flag)
+  return str.match(regEx).toString()
+}
+
+console.log(firstDigit('var_1__Int2'))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+1   
+                </code>
+              </pre>
+            </div>
+            <p><strong>.match()</strong> and <strong>.exec()</strong> will return an array.</p>
+            <p><code class="qs">str.match(regEx)</code></p>
+            <p><code class="qs">regEx.exec(str)</code></p>
+            <p><strong>.exec()</strong> ignores successive matches even with the global flag. Can be used in a <em>while</em> loop.</p>
+          </div>
+          
+          <div class="notes">
+            <p>non regex</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function firstDigit(str) {
+  const strNums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  const chars = str.split('');
+  
+  for(const char of chars) {
+    if(strNums.includes(char)) {
+        return char;
+    }
+  }
+}
+
+console.log(firstDigit('var_1__Int2'))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+1    
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>largest Number</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function largestNumber(num) {
+  let result = []
+  for(let i = 1; i <= num; i ++){
+    result.push(9)
+  }
+  return parseInt(result.join(''),10)
+}
+
+console.log(largestNumber(3))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›999          
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function largestNumber(num) {
+  let placeholder = '';  
+  for(let i = 0; i < num; i++) {
+      placeholder = placeholder.concat('9');
+  }
+  return parseInt(placeholder);
+}
+
+console.log(largestNumber(3))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›999          
+                </code>
+              </pre>
+            </div>
+          </div>
+          
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function largestNumber(num) {
+  const placeholder = '9'.repeat(num);
+
+  return parseInt(placeholder);
+}
+
+console.log(largestNumber(3))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+›999  
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <h4>Max Multiple</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <p>What's the maximum multiple of a number before it hits the boundary?</p>
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function maxMultiple(divisor, bound) {
+  const remainder = bound % divisor;
+
+  return bound - remainder;
+}
+
+console.log(maxMultiple(3,10))
+                </code>
+              </pre>
+            </div>
+            
+            <div class="snippet console">
+              <pre>
+                <code>
+9
+                </code>
+              </pre>
+            </div>
+            <p>Try to think of a mathematical solution. Using a loop is a problem because multiplying the divisor each time before it hits the boundary will always go one multiplication higher.</p>
+          </div>
+        </div>
+        
+      </section>
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <!-- --------------------------------- -->
+      <section id="pacman" class="box">
+        <h2>Pacman</h2>
+        <h4>The Grid</h4>
+        <div class="flex-row">
+          <div class="notes">
+            <!-- created through JS -->
+            <div id="example-grid"></div>
+            <p>Make use of the :after pseudo-element and 'padding-bottom'. We can create our responsive square using only CSS. The solution relies on the somewhat counterintuitive fact that padding is calculated as a percentage of its parent element’s width, not height. This rule applies, even for 'padding-top' and 'padding-bottom', despite being vertical measurements. To capitalize on this fact, we must first remove the 'height' property from our .square element. In its place, we add an empty :after element to .square and set 'padding-bottom: 100%'</p>
+          </div>
+          <div class="notes n-medium">
+            <div class="snippet css-markup">
+              <pre>
+                <code class="language-css">
+#example-grid {
+  display: grid;
+  max-width: 700px;
+  grid-template: auto / repeat(28, 1fr);
+  outline: solid black;
+} 
+
+#example-grid div {
+  border: solid 1px black;
+  font-size: 0.5em;
+  text-align: center;
+} 
+
+#example-grid div::after {
+  content: '';
+  display: block;
+  /* compensate for the font-size 
+     and the extra (auto) line height */
+  padding-bottom: calc(100% - 1.75em);
+}
+                </code>
+              </pre>
+            </div>
+            
+          </div>
+          <div class="notes">
+            <div class="snippet">
+              <pre>
+                <code class="language-js">
+function control(e) {
+  squares[pacmanCurrentIndex].classList.remove('pacman')
+  switch(e.keyCode) {
+    case 40:
+    console.log('pressed down')
+    // bottom wall, if pos + 28 is less than 784
+    if( pacmanCurrentIndex + width < width * width) pacmanCurrentIndex +=width
+    break
+    case 38:
+    console.log('pressed up')
+    // top wall, if pos - 28 is greater than 0
+    if( pacmanCurrentIndex - width > 0) pacmanCurrentIndex -=width
+    break
+    case 37: 
+    console.log('pressed left')
+    // left wall, if remainder of pos 
+    // divided by 28 is not equal to 0
+    if( pacmanCurrentIndex % width !==0) pacmanCurrentIndex -=1
+    break
+    case 39:
+    console.log('pressed right')
+    // right wall, if remainder of pos 
+    // divided by 28 is less than 28 -1
+    if( pacmanCurrentIndex % width < width -1) pacmanCurrentIndex +=1
+    break
+  }
+  squares[pacmanCurrentIndex].classList.add('pacman')
+}
+document.addEventListener('keydown', control)
+                </code>
+              </pre>
+            </div>
+            <p>If statements for moving. Hitting the top and bottom are easy. Add of subtract 28 from the position if its more or less (respectively) than the total, stop.</p>
+            <p>Remember the grid is 0 indexed. Equal divisions will have equal outcomes. Using <strong>modulus</strong> creates repeating patterns. </p>
+            <p>On the left hand side, all the numbers are perfectly divisible by 28. No remainder.</p>
+            <ul>
+              <li>0  &#247; 28 = 0</li>
+              <li>56 &#247; 28 = 2</li>
+              <li>84 &#247; 28 = 3</li>
+            </ul>
+            <p>On the right hand side, all the numbers when divided by 28 have a remainder of 27</p>
+            <ul>
+              <li>27 &#247; 28 = 0.964 r27</li>
+              <li>55 &#247; 28 = 1.964 r27</li>
+              <li>83 &#247; 28 = 2.964 r27</li>
+            </ul>
+          </div>
+        </div>
+        
+        <ul>
+          <li>set interval, clare interval, timer Id <strong>ghost.timerId = setInterval(function() {}</strong></li>
+          <li>set timeout</li>
+          <li>classes the Ghost constructor has a class name.</li>
+          <li>parallel arrays</li>
+          <li>modulus repeating sets ( find ffc example)</li>
+          <li>keydown</li>
+          <li>switch statements,</li>
+          <li>GHOST LOGIC</li>
+          <li>papercraft</li>
+          <li>Grid SVG responsive.</li>
+        </ul>
+      </section>
+        
+      <footer></footer>
+      <button id="scroll-btn" class="btn-hidden" title="Go to top">⌃</button>
+      
+    </main>
+  </div>
+  
+  
+  
+  
+  <!--  JS  -->
+  <script src="./JS/prism.js"></script>
+  <script src="./JS/app6.js"></script>
+  <script src="./JS/scrollbtn.js"></script>
+</body>
+</html>

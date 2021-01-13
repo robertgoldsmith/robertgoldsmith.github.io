@@ -1,0 +1,64 @@
+// variables
+
+:root {
+  --almost-black: rgba(25, 19, 8, 1);
+  --dark: rgba(128, 128, 128, 1);
+  --dark: #322a26;
+  --neutral-l: rgba(211, 211, 211, 1);
+  --white: rgba(255, 255, 255, 1);
+
+  --html_markup: rgba(4, 37, 36, 1);
+  --css_markup: rgba(7, 59, 58, 1);
+
+}
+
+// mixins
+@mixin transition-ease {
+  transition: all 0.3s ease-in-out;
+}
+
+$small-devices: 576px;
+$medium-devices: 768px;
+$large-devices: 992px;
+$xl-devices: 1200px;
+$xxl-devices: 1400px;
+
+@mixin small-devices {
+  @media (min-width: #{$small-devices}) 
+  {
+    @content;
+  }
+}
+
+@mixin medium-devices {
+  @media (min-width: #{$medium-devices}) 
+  {
+    @content;
+  }
+}
+
+@mixin large-devices {
+  @media (min-width: #{$large-devices}) 
+  {
+    @content;
+  }
+}
+
+@mixin xl-devices {
+  @media (min-width: #{$xl-devices}) 
+  {
+    @content;
+  }
+}
+
+@mixin xxl-devices {
+  @media (min-width: #{$xxl-devices}) 
+  {
+    @content;
+  }
+}
+
+// prism reset
+pre[class*="language-"] {
+  overflow-y: scroll;
+}
