@@ -425,11 +425,7 @@ section p {
   align-items: flex-end;
 }
 
-#centering_content .flex-example {
-  height: 200px;
-  justify-content: center;
-  align-items: center;
-}
+
 
 #margin_auto .flex-example .margin-home {
   margin-right: auto;
@@ -437,6 +433,13 @@ section p {
 
 #margin_auto .flex-example .margin-box1 {
   margin-left: auto;
+}
+
+
+#centering_content .flex-example {
+  height: 200px;
+  justify-content: center;
+  align-items: center;
 }
 
 #flex_wrap .flex-example {
